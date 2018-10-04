@@ -21,7 +21,7 @@ class verifyEmail
         if ($user->email_verified_at) {
             
         }else{
-            return redirect('/email/verify');
+            return redirect()->route('verification.notice');
         }
 
         return $next($request);
