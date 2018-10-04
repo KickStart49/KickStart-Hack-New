@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="../assets/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../assets/css/login2.css">
+	<script type="text/javascript" src="../assets/js/jquery.min.js"></script>
+	<script type="text/javascript" src="../assets/js/customlogin.js"></script>
+	<link rel="stylesheet" type="text/css" href="../assets/css/font/css/font-awesome.min.css">
+
+</head>
+<body>
+	<section>
+	<div class="container-fluid">
+ 		<div class="mainlogin col-xl-4 col-sm-12 hidden login">
+ 			<div class="loadingline hidden"></div>
+ 			<div class="padding">
+ 				<img src="../images/logo.png" class="image">
+	 			<h4 class="title margin2">Sign in</h4>
+	 			<p class="title" style="margin-bottom:16%">with your KickStart Account</p>
+	 			<form method="post">
+	 				<label class="emaillabel">Enter your email</label>
+	    			<input type="email" class="form-control log margin thick wait" id="email" name="email">
+	    			<p class="loginmessage para"></p>
+	    			<br>
+	    			<div class="form-group">
+	    				<a href="" class="c float-left margin">Forgot email?</a>
+	    				<input type="button" onclick="loginsubmit()" id="next" class="WaitOnClick log float-right btn btn-primary" value="Next">
+	    				<!--onkeypress="handleEnter(event)"-->
+	    			</div>
+	    		</form>
+	 		</div>
+	 	</div>
+	</div>
+	<div align="center" class="bot">
+		<div class="bottom">
+			<a href="#" class="colour">New to KickStart?</a>
+		</div>
+		<div class="bottom1">
+			<a href="#"  class="colour">Help</a>
+		</div>
+		<div class="bottom2">
+			<a href="#"  class="colour">About us</a>
+		</div>
+	</div>
+</section>
+
+ 	<div class="mainlogin col-xl-4 col-sm-12 password">
+ 		<div class="padding">
+	 		<form method="post">
+	 			<img src="../images/logo.png" class="image">
+	 			<h3 class="title margin2" style="">Welcom</h3>
+	 			<svg width="400" height="54">
+  					<rect x="55" y="15" rx="20" ry="15" width="320" height="38" class="rectangle" />
+  					<svg height="100" width="100">
+  						<circle cx="80" cy="34" r="14" stroke="grey" stroke-width="0.5" fill="purple"/>
+					</svg>
+					<text class="username" x="200" y="40" fill="black">Hi ABC</text>
+				</svg>
+				<p class="new3"></p>
+				<p class="new2"></p>
+				<p class="goto">
+					<a href="#" onclick="emailSection()" class="colour">
+						<i class="fa fa-arrow-down new5"></i>
+					</a>
+				</p>
+	 			<p class="title">To continue, first verify it's you</p>
+	 			<div class="top">
+	 				<label class="passwordlabel">Enter your password</label>
+	 				<input type="password" class="form-control log thick margin" id="pwd" name="pwd">
+	 				<p class="passwordmessage para"></p>
+	 				<br>
+	 			</div>
+	 			<div class="form-group">
+	    			<a href="" class="c float-left margin">Forgot password?</a>
+	    			<input type="button" onclick="passwordsubmit()" class="float-right btn log btn-primary bottom-button" value="Next">
+	    		</div>
+	 		</form> 
+	 	</div>	
+ 	</div>  
+</body>
+</html>
