@@ -22,7 +22,8 @@
           <p class="title">To continue, first verify it's you</p>
           <label class="passwordlabel">Enter your password</label>
           <input type="password" class="form-control log thick margin" id="password" name="password">
-          <p class="passwordmessage para"></p>
+          <input type="hidden" name="email" id="email" value="{{session('email') }}">
+          <p class="loginmessage para"></p>
           <br>
         </div>
 		<div class="form-group">
@@ -76,12 +77,9 @@
     
   $("#password").trigger("focus");
 
-});
-
-$('#next').click(function(){
+  $('#next').click(function(){
   
   var password = $("#password").val();
-
   // Check Null
 
   if(!password){
@@ -98,6 +96,8 @@ $('#next').click(function(){
   }
 
 });
+});
+
 
 function ValidatePassword(password) 
 {

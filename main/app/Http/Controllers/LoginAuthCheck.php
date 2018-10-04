@@ -24,6 +24,7 @@ class LoginAuthCheck extends Controller
     }
     public function password(Request $request)
     {
+        
         $email = $request->email;
         $password = $request->password;
         if (Auth::attempt(['email' => $email, 'password' => $password])) {
@@ -35,6 +36,7 @@ class LoginAuthCheck extends Controller
     }
     public function passwordview(Request $request)
     {
+
         $email=$request->email;
         $redirectTo=$request->redirectTo;
         if($redirectTo)
@@ -42,8 +44,10 @@ class LoginAuthCheck extends Controller
                     ->with('email',$email)
                     ->with('redirectTo',$redirectTo);
         }else{
+            $redirectTo = "/home";
             return redirect()->route('loginpsd')
-                    ->with('email',$email);
+                    ->with('email',$email)
+                    ->with('redirectTo',$redirectTo);
         }
     }
     public function loginsuccess(Request $request)
