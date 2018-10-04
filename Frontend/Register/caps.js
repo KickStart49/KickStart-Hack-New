@@ -8,9 +8,36 @@ $(document).ready(function()
 			$(".check").text("Enter a valid email");
 		}
 	});
-	$('#password').focusout(function() 
+	$('#password').keypress(function() 
 	{
 		$('.check1').text(checkStrength($('#password').val()))
+	});
+	$(".toggle-password").click(function() 
+	{
+		$(this).toggleClass("fa-eye fa-eye-slash");
+		var input = $($(this).attr("toggle"));
+		if (input.attr("type") == "password") 
+		{
+			input.attr("type", "text");
+		}
+		else 
+		{
+			input.attr("type", "password");
+		}
+	});
+	$("#pass1").focusout(function()
+	{
+		var a=$("#pass1").val();
+		if(!checkConfirmPassword(a))
+		{
+			$(".check2").addClass("too_weak");
+			$(".check2").text("Please confirm password");
+		}
+		else
+		{
+			$(".check2").addClass("strong");
+			$(".check2").text("Password confirmed");
+		}
 	});
 });
 function validateEmail(x)
@@ -54,4 +81,11 @@ function checkStrength(password) {
 			return 'Strong'
 			$(".check1").addClass("strong");
 		}
+}
+function checkConfirmPassword(a)
+{
+	if(a != ($("#password").val()))
+		return false;
+	else
+		return true;
 }
