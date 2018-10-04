@@ -14,6 +14,11 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Auth::routes(['verify' => true]);
+
+Route::get('/signup', function () {
+    return view('auth.register.register');
+});
 
 Route::get('/admin', function () {
     return view('admin.user');
@@ -30,7 +35,7 @@ Route::get('/login/psd', function () {
 
 Route::get('/dashboard', function () {
     return view('welcome');
-})->middleware('auth');
+})->middleware(['auth','emailverify']);
 
 Route::get('/login/identifier',[
     'uses' => 'LoginAuthCheck@login',
