@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/admin', function () {
+    return view('admin.user');
+});
+
 Route::get('/login/psd', function () {
 	if(Session::get('email')){
     	return view('auth.login.password');
