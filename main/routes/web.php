@@ -14,15 +14,14 @@
 Route::get('/', function () {
     return view('welcome');
 });
-<<<<<<< HEAD
+
 
 Route::get('/in/{username}', [
     'uses' => 'profilecontroller@user',
     'as' => 'profile'
 ]);
 
-=======
-<<<<<<< HEAD
+
 Route::get('/admin/forms', [
     'uses' => 'Admincontroller@formindex',
     'as'=>'admin.forms'
@@ -60,13 +59,11 @@ Route::get('/admin/show/user', [
 
 Route::get('/again/login', function () {
     return view('auth.login.email');
-=======
->>>>>>> 97175ed576b34f96860a9b3deee8829c601cdc27
+});
 Auth::routes(['verify' => true]);
 
 Route::get('/signup', function () {
     return view('auth.register.register');
->>>>>>> 6a3c6fb2c9823d3de3e1219af95f2caf4bc036c2
 });
 
 Route::get('/admin/tables', function () {
