@@ -1,6 +1,6 @@
 $(document).ready(function()
 {
-	$(".one").focusout(function()
+	$("#sub").click(function()
 	{
 		var x=$(".one").val();
 		if(!validateEmail(x))
