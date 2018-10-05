@@ -24,17 +24,19 @@
         <h2 style="text-align: center; margin-bottom: 3%;">Manager</h2>
         <div class="row">
         @foreach($users as $user)
+        @foreach($profiles as $profile)
       @if($user->permission == "manager")
-        <div class="col-lg-3 col-sm-6">
-          <div >
-          
-           <img style="width: 80%; height: 80%;" src="{{asset('img/avatar-5.jpg')}}">
-           <p>{{$user->name}}</p>
-           <a href="{{route('user.visitor',['id'=>$user->id])}}"class="btn">Remove Permission</a>
+      <div class="col-xl-3 col-sm-6">
+            <img style="border-radius: 50%;" src="{{asset('img/avatar-5.jpg')}}">  
+            <p class="contentv">{{$user->name}}</p>
+           
+           <p>{{$profile->about}}</p>
+            <button>Contact</button><br>
+            <a href="{{route('user.visitor',['id'=>$user->id])}}"class="btn">Remove</a>
           </div>
-        </div>
         
       @endif
+      @endforeach
       @endforeach
       </div>
       </section>
@@ -46,17 +48,21 @@
         <section class="dashboard-counts section-padding" align="center">
         <div class="row">
           @foreach($users as $user)
+          @foreach($profiles as $profile)
              @if($user->permission == "visitor")
-             
-        <div class="col-lg-3 col-sm-6">
-            <img style="width: 80%; height: 80%;" src="{{asset('img/avatar-5.jpg')}}">
-            <p>{{$user->name}}</p>
-            <a href="{{route('user.manager',['id'=>$user->id])}}"class="btn">Allow Permissions</a>
+         <div class="col-xl-3 col-sm-6">
+            <img style="border-radius: 50%;" src="{{asset('img/avatar-5.jpg')}}">  
+            <p class="contentv">{{$user->name}}</p>
+            <p>{{$user->profile->about}}</p>
+            <button>Contact</button><br>
+            <a href="{{route('user.manager',['id'=>$user->id])}}"class="btn">Remove</a>  
+            
         </div>
 
       @endif
       
       @endforeach
+      @endforeach
 </div>
-      </section>
+      
 @stop
