@@ -17,7 +17,15 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('email')->unique();
+<<<<<<< HEAD
             $table->enum('permission',['teacher','student','parent']);
+=======
+<<<<<<< HEAD
+            $table->enum('permission',['administrator','teacher','student','parent']);
+=======
+            $table->enum('permission',['teacher','student','parent'])
+>>>>>>> fd0fc92bda94438659debc5b1e862ce863c2f942
+>>>>>>> 0ccd6bf78b1a51f1b8a423b14429c2434a1ef117
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

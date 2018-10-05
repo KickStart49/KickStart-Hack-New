@@ -9,12 +9,30 @@
                         @csrf
 
                         <div class="form-group row">
+                            <label for="category" class="col-md-4 col-form-label text-md-right">{{ __('I am a') }}</label>
+
+                            <div class="col-md-6">
+                                <select  id="category" type="button" data-toggle="dropdown" class="btn btn-default dropdown-toggle form-control{{ $errors->has('category') ? ' is-invalid' : '' }}" name="category" value="{{ old('category') }}" required autofocus><span class="caret"></span>
+                               
+                                    <option class="dropdown-item" value="student">Student</option>
+                                    <option class="dropdown-item" value="teacher">Teacher</option>
+                                    <option class="dropdown-item" value="parent">Parent</option>
+                                
+                                </select>
+                                @if ($errors->has('category'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('category') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+                        <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 
                             <div class="col-md-6">
                                 <input  id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
                                 
-                        <span class="tbar"></span>
+                        
                                 @if ($errors->has('name'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('name') }}</strong>
