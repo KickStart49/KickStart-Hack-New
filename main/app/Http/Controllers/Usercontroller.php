@@ -13,8 +13,7 @@ class Usercontroller extends Controller
      public function manager($id)
     {
         $user=User::find($id);
-        $user->manager=1;
-        $user->visitor=0;
+        $user->permission="manager";
         $user->save();
         return redirect()->back();
     }
@@ -22,8 +21,7 @@ class Usercontroller extends Controller
     public function visitor($id)
     {
          $user=User::find($id);
-        $user->visitor=1;
-        $user->manager=0;
+        $user->permission="visitor";
         $user->save();
         return redirect()->back();
     }

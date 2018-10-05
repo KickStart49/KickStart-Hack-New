@@ -18,36 +18,45 @@
         </div>
         @endforeach
       </section>
-      @foreach($users as $user)
-      @if($user->permission == "manager")
+      
 			
         <section class="dashboard-counts section-padding" align="center">
         <h2 style="text-align: center; margin-bottom: 3%;">Manager</h2>
         <div class="row">
+        @foreach($users as $user)
+      @if($user->permission == "manager")
         <div class="col-lg-3 col-sm-6">
           <div >
+          
            <img style="width: 80%; height: 80%;" src="{{asset('img/avatar-5.jpg')}}">
+           <p>{{$user->name}}</p>
+           <a href="{{route('user.visitor',['id'=>$user->id])}}"class="btn">Remove Permission</a>
           </div>
-          <br>
         </div>
-        </div>
-      </section>
-      @endif
-
-      @if($user->permission == "visitor")
-      
-        <section class="dashboard-counts section-padding" align="center">
-        <h2 style="text-align: center; margin-bottom: 3%;">visitor</h2>
-        <div class="row">
-        <div class="col-lg-3 col-sm-6">
-          <div >
-           <img style="width: 80%; height: 80%;" src="{{asset('img/avatar-5.jpg')}}">
-            <p>{{$user->name}}</p>
-          </div>
-          <br>
-        </div>
-        </div>
-      </section>
+        
       @endif
       @endforeach
+      </div>
+      </section>
+
+      
+           
+        
+        <h2 style="text-align: center; margin-bottom: 3%;">visitor</h2>
+        <section class="dashboard-counts section-padding" align="center">
+        <div class="row">
+          @foreach($users as $user)
+             @if($user->permission == "visitor")
+             
+        <div class="col-lg-3 col-sm-6">
+            <img style="width: 80%; height: 80%;" src="{{asset('img/avatar-5.jpg')}}">
+            <p>{{$user->name}}</p>
+            <a href="{{route('user.manager',['id'=>$user->id])}}"class="btn">Allow Permissions</a>
+        </div>
+
+      @endif
+      
+      @endforeach
+</div>
+      </section>
 @stop
