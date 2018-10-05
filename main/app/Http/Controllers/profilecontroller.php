@@ -10,7 +10,7 @@ class profilecontroller extends Controller
 {
     public function user(Request $request){
     	$url = $request->url();
-    	$username = str_after($url,'127.0.0.1:8000/in/');
+    	$username = str_slug(str_after($url,'192.168.43.124:8000/in/'));
 
     	$user = DB::table('users')->where('name', $username)->first();
 
@@ -35,7 +35,5 @@ class profilecontroller extends Controller
     	}else{
     		abort(404);
     	}
-    	
-    	
     }
 }

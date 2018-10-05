@@ -42,7 +42,8 @@ $('#next').click(function(){
 
   if(!email){
 
-    $(".loginmessage").html("Please provide email");
+    $(".loginmessage").html("please provide your email");
+    toastr.error('Dear User,You forgot to provide your email !');
     
 
   }else{
@@ -96,6 +97,7 @@ function ValidateEmail(email)
             $(".login").removeClass("loading");
             $(".loadingline").addClass("hidden");
             $(".loginmessage").html("Couldn't find your email");
+            toastr.error("Couldn't find your email !");
             
            
           }else{
@@ -113,6 +115,8 @@ function ValidateEmail(email)
   }else{
 
     $(".loginmessage").html("Invalid Email Format");
+    toastr.error('Invalid Email Format');
+  
   
   }
 }

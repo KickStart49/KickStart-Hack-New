@@ -39,6 +39,7 @@
 @endif
 @stop
 @section('script')
+<script>toastr.success('Welcome {{ session('email') }}');</script>
 	<script type="text/javascript">
 		$(document).ready(function () {
   
@@ -77,13 +78,11 @@
     
   $("#password").trigger("focus");
 
-<<<<<<< HEAD
 });
 
 $('#submit').click(function(){
-=======
-  $('#next').click(function(){
->>>>>>> 6a3c6fb2c9823d3de3e1219af95f2caf4bc036c2
+
+  
   
   var password = $("#password").val();
   // Check Null
@@ -91,7 +90,7 @@ $('#submit').click(function(){
   if(!password){
 
     $(".loginmessage").html("Please provide password");
-    
+    toastr.error("please provide Password !");
 
   }else{
    
@@ -101,7 +100,6 @@ $('#submit').click(function(){
 
   }
 
-});
 });
 
 
@@ -147,7 +145,7 @@ function ValidatePassword(password)
             $(".login").removeClass("loading");
             $(".loadingline").addClass("hidden");
             $(".loginmessage").html("Invalid Password");
-            
+            toastr.error("Invalid Password !");
            
           }else{
 
@@ -156,7 +154,7 @@ function ValidatePassword(password)
             $(".login").removeClass("loading");
             $(".loadingline").addClass("hidden");
             $(".loginmessage").html("Something went wrong.Try again later");
-           
+            
           }
         }
       });      
@@ -164,7 +162,8 @@ function ValidatePassword(password)
   }else{
 
     $(".loginmessage").html("Password must be atleast 6 characters");
-  
+    toastr.error("Password must be atleast 6 characters !");
+
   }
 }
 

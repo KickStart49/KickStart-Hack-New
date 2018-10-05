@@ -24,5 +24,5 @@
 @stop
 @section('script')
 	<script type="text/javascript" src="{{ asset('js/signinwithemail.js') }}"></script>
-	<script>toastr.info('Welcome to KickStart');</script>
+	
 @stop
