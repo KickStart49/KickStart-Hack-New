@@ -7,7 +7,9 @@
   <meta name="csrf-token" content="{{ csrf_token() }}" />
   <link rel="stylesheet" type="text/css" href="{{ asset('css/bootstrap.min.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('css/login2.css') }}">
-  @yield('css')
+
+<link rel="stylesheet" type="text/css" href="{{ asset('css/tostr.css') }}">  
+@yield('css')
 
 </head>
 <body>
@@ -34,6 +36,7 @@
 </section>
 
 <script type="text/javascript" src="{{ asset('js/jquery.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/tostr.js') }}"></script>
 @yield('script')
 </body>
 </html>

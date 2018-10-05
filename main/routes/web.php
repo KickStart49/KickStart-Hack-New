@@ -14,6 +14,12 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/in/{username}', [
+    'uses' => 'profilecontroller@user',
+    'as' => 'profile'
+]);
+
 Auth::routes(['verify' => true]);
 
 Route::get('/signup', function () {
