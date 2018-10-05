@@ -28,4 +28,7 @@ Registeration JS[Running]
 
 Hrishikesh)
 
-User Profile Frontend[Running]
+User Profile Frontend
+Google Map API[running]
+Google Analitics[running]
+Editor Layout[running]
