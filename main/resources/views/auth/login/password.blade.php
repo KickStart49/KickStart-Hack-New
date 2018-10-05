@@ -27,7 +27,7 @@
         </div>
 		<div class="form-group">
 		   <a href="" class="float-left margin">Forgot password?</a>
-		   <input type="button" id="next" class="float-right btn btn-primary bottom-button" value="Next">
+		   <input type="button" id="submit" class="float-right btn btn-primary bottom-button" value="Next">
 		</div>
 	</form>
 @else
@@ -78,7 +78,7 @@
 
 });
 
-$('#next').click(function(){
+$('#submit').click(function(){
   
   var password = $("#password").val();
 

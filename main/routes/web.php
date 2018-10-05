@@ -14,9 +14,47 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/admin/forms', [
+    'uses' => 'Admincontroller@formindex',
+    'as'=>'admin.forms'
+]);
 
-Route::get('/admin', function () {
-    return view('admin.user');
+
+Route::get('/admin/charts', [
+    'uses' => 'Admincontroller@index',
+    'as'=>'admin.charts'
+]);
+
+Route::get('/admin/create/user', [
+    'uses' => 'Admincontroller@createuser',
+    'as'=>'admin.create.user'
+]);
+
+
+Route::get('/admin/show/user', [
+    'uses' => 'Usercontroller@showuser',
+    'as'=>'admin.show.user'
+]);
+    Route::get('user/manager/{id}', [
+    'uses' => 'Usercontroller@manager',
+    'as'=>'user.manager'
+]);
+
+     Route::get('user/visitor/{id}', [
+    'uses' => 'Usercontroller@visitor',
+    'as'=>'user.visitor'
+]);
+
+
+
+
+
+Route::get('/again/login', function () {
+    return view('auth.login.email');
+});
+
+Route::get('/admin/tables', function () {
+    return view('admin.tables');
 });
 
 Route::get('/login/psd', function () {

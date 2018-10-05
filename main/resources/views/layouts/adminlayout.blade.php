@@ -46,17 +46,17 @@
         <div class="main-menu">
           <h5 class="sidenav-heading">Administrator</h5>
           <ul id="side-main-menu" class="side-menu list-unstyled">                  
-            <li><a href="index.html"> <i class="icon-home"></i>General</a></li>
-            <li><a href="forms.html"> <i class="icon-form"></i>User Pannal</a></li>
-            <li><a href="charts.html"> <i class="fa fa-bar-chart"></i>Charts</a></li>
-            <li><a href="tables.html"> <i class="icon-grid"></i>Layout</a></li>
-            <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Example dropdown </a>
+            <li><a href="/admin/tables"> <i class="icon-home"></i>General</a></li>
+            <li><a href="{{route('admin.show.user')}}"> <i class="icon-home"></i>User Panel</a></li>
+
+            
+            <li><a href="{{route('admin.charts')}}"> <i class="fa fa-bar-chart"></i>Charts</a></li>
+            
+            {{-- <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Users </a>
               <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
-                <li><a href="#">Page</a></li>
-                <li><a href="#">Page</a></li>
-                <li><a href="#">Page</a></li>
+                <li><a href="{{route('admin.show.user')}}">All Users</a></li>
               </ul>
-            </li>
+            </li> --}}
           </ul>
         </div>
       </div>
@@ -125,7 +125,7 @@
                   </ul>
                 </li>
                 <!-- Log out-->
-                <li class="nav-item"><a href="login.html" class="nav-link logout"> <span class="d-none d-sm-inline-block">Logout</span><i class="fa fa-sign-out"></i></a></li>
+                <li class="nav-item"><a href="/again/login" class="nav-link logout"> <span class="d-none d-sm-inline-block">Logout</span><i class="fa fa-sign-out"></i></a></li>
               </ul>
             </div>
           </div>
