@@ -14,20 +14,63 @@
 Route::get('/', function () {
     return view('welcome');
 });
+<<<<<<< HEAD
 
 Route::get('/in/{username}', [
     'uses' => 'profilecontroller@user',
     'as' => 'profile'
 ]);
 
+=======
+<<<<<<< HEAD
+Route::get('/admin/forms', [
+    'uses' => 'Admincontroller@formindex',
+    'as'=>'admin.forms'
+]);
+
+
+Route::get('/admin/charts', [
+    'uses' => 'Admincontroller@index',
+    'as'=>'admin.charts'
+]);
+
+Route::get('/admin/create/user', [
+    'uses' => 'Admincontroller@createuser',
+    'as'=>'admin.create.user'
+]);
+
+
+Route::get('/admin/show/user', [
+    'uses' => 'Usercontroller@showuser',
+    'as'=>'admin.show.user'
+]);
+    Route::get('user/manager/{id}', [
+    'uses' => 'Usercontroller@manager',
+    'as'=>'user.manager'
+]);
+
+     Route::get('user/visitor/{id}', [
+    'uses' => 'Usercontroller@visitor',
+    'as'=>'user.visitor'
+]);
+
+
+
+
+
+Route::get('/again/login', function () {
+    return view('auth.login.email');
+=======
+>>>>>>> 97175ed576b34f96860a9b3deee8829c601cdc27
 Auth::routes(['verify' => true]);
 
 Route::get('/signup', function () {
     return view('auth.register.register');
+>>>>>>> 6a3c6fb2c9823d3de3e1219af95f2caf4bc036c2
 });
 
-Route::get('/admin', function () {
-    return view('admin.user');
+Route::get('/admin/tables', function () {
+    return view('admin.tables');
 });
 
 Route::get('/login/psd', function () {

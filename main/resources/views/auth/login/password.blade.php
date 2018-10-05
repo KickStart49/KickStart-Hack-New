@@ -28,7 +28,7 @@
         </div>
 		<div class="form-group">
 		   <a href="" class="float-left margin">Forgot password?</a>
-		   <input type="button" id="next" class="float-right btn btn-primary bottom-button" value="Next">
+		   <input type="button" id="submit" class="float-right btn btn-primary bottom-button" value="Next">
 		</div>
 	</form>
 @else
@@ -77,7 +77,13 @@
     
   $("#password").trigger("focus");
 
+<<<<<<< HEAD
+});
+
+$('#submit').click(function(){
+=======
   $('#next').click(function(){
+>>>>>>> 6a3c6fb2c9823d3de3e1219af95f2caf4bc036c2
   
   var password = $("#password").val();
   // Check Null
