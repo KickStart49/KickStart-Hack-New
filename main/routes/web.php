@@ -14,6 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+<<<<<<< HEAD
 Route::get('/admin/forms', [
     'uses' => 'Admincontroller@formindex',
     'as'=>'admin.forms'
@@ -51,6 +52,12 @@ Route::get('/admin/show/user', [
 
 Route::get('/again/login', function () {
     return view('auth.login.email');
+=======
+Auth::routes(['verify' => true]);
+
+Route::get('/signup', function () {
+    return view('auth.register.register');
+>>>>>>> 6a3c6fb2c9823d3de3e1219af95f2caf4bc036c2
 });
 
 Route::get('/admin/tables', function () {
@@ -68,7 +75,7 @@ Route::get('/login/psd', function () {
 
 Route::get('/dashboard', function () {
     return view('welcome');
-})->middleware('auth');
+})->middleware(['auth','emailverify']);
 
 Route::get('/login/identifier',[
     'uses' => 'LoginAuthCheck@login',
