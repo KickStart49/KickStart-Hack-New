@@ -29,6 +29,10 @@ Route::prefix('login')->group(function () {
         'uses' => 'LoginAuthCheck@login',
         'as' => 'logindemo'
     ]);
+     Route::post('/code/verification', [
+     'uses' => 'Admincontroller@verification',
+     'as'=>'code.verification'
+        ]);
 
     Route::post('success', [
         'uses' => 'LoginAuthCheck@loginsuccess',
@@ -88,6 +92,7 @@ Route::prefix('admin')->group(function () {
     Route::get('tables', function () {
         return view('admin.tables');
     });
+
 });
 
 Route::get('/in/{username}', [
