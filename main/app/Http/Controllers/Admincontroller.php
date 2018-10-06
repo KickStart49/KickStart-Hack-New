@@ -55,20 +55,42 @@ class Admincontroller extends Controller
                 $quote->save();  
             }
 
-            return redirect()->route('home');
+            return redirect()->back();
 
        }
     }
     public function assi_add(Request $request){
+        
+        // $this->validate($request, [
+        // 'title' => 'required'
+        // ]);
+       
+        
+        $assignment = new Assignment();
+        // $assignment->fill($request->all());
+        $assignment->title = $request -> Assignment_title;
+        $assignment->lastdate = $request->duedate;
+        $featured=$request->featured;
+        $featured_new_name=time().$featured->getClientOriginalName();
+        $featured->move('uploads/assignment',$featured_new_name);
+        $assignment->featured='uploads/assignment/'. $featured_new_name;
+        $assignment->save();
+         
+    }
+    public function stu_search(Request $request)
+    {
+        $re = $request->searchmembers;
+        
+    
+    if ($re){
 
-          
-            $assignment=Assignment::create([
-        'title'=>$request->title,
-        'about'=>$request->about,
-        'lastdate'=>$request->lastdate,
-        'avatar'=>'uploads/assignment',
-        dd($request->all())
-    ]);
+        
+
+        $search= student_teacher::all();
+           
+        $results = DB::table('users')->where('name','=',$re)->first();
+        dd($results->all());
+    }
     }
    
 

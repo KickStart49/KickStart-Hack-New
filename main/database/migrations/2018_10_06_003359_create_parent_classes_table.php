@@ -15,6 +15,7 @@ class CreateParentClassesTable extends Migration
     {
         Schema::create('parent_classes', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('avatar')->nullable();
             $table->integer('user_id')->default(0);
             $table->timestamps();
         });

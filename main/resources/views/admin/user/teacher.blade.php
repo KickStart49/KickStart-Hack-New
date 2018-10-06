@@ -24,7 +24,7 @@
                     
                     <h3>Assignments</h3>
                     <div>
-                    <form href={{route('assignment.add')}} method="post">
+                    <form href={{route('assignment.add')}} method="post" enctype="multipart/form-data">
                     {{csrf_field()}}
                     <input type="text" name="Assignment title" placeholder="Assignment title"><br><br> 
                     <input type="date" name="duedate">
@@ -32,7 +32,7 @@
                       <input type="checkbox" name="list2" value="gradebook">Add to Gradebook<br>
                       <input type="text" name="Assignment Discription" placeholder="assignment Discription">
                       <input type="text" name="Select classes" placeholder="Select classes"> 
-                      <input type="file" name="attach a file">
+                      <input type="file" name="featured">
                       <button>Submit</button>
 
                     </form>
@@ -40,7 +40,11 @@
                   </div>
                   <div id="Tokyo" class="tabcontent">
                     <div><h3>Members</h3>
+                    <form href="{{route('student.search')}}" method="post">
                     <span><input type="text" name="searchmembers" placeholder="search members"></span>
+                    {{csrf_field()}}
+                    <input type="submit" value="Search">
+                  </form>
                     </div>
                     <div class="row">
                                 <div class="col-md-10">

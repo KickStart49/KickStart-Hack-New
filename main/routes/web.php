@@ -137,4 +137,9 @@ Route::post('/teacher', [
     'as'=>'assignment.add'
 ]);
 
+Route::post('/student/search', [
+    'uses' => 'Admincontroller@stu_search',
+    'as'=>'student.search'
+]);
+
 

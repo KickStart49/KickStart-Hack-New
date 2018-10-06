@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint\file;
 
 class CreateAssignmentsTable extends Migration
 {
@@ -16,9 +17,8 @@ class CreateAssignmentsTable extends Migration
         Schema::create('assignments', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->string('about');
             $table->date('lastdate');
-            $table->string('avatar')->nullable();
+            $table->string('featured')->nullable();
             $table->timestamps();
         });
     }
