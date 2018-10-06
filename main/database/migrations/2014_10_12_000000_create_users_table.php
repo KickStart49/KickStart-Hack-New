@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('email')->unique();
-            
+            $table->boolean('code_status')->default(0);
             $table->enum('permission',['administrator','teacher','student','parent']);
             
             $table->timestamp('email_verified_at')->nullable();

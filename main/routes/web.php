@@ -100,7 +100,7 @@ Route::get('/in/{username}', [
 
 Route::get('/dashboard', function () {
     return view('welcome');
-})->middleware(['auth','emailverify','code'])->name('dashboard');
+})->middleware(['auth','emailverify','code','codegenerate'])->name('dashboard');
 
 Auth::routes();
 

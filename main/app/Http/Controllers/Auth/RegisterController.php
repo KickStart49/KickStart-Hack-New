@@ -9,6 +9,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Contracts\Auth\Authenticatable;
+use Illuminate\Auth\Authenticatable as AuthenticableTrait;
 class RegisterController extends Controller
 {
     /*
@@ -65,33 +67,15 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-
-
-        $user = User::create([
+        return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'permission' => $data['category']
+            'permission' => $data['category'],
+            
         ]);
 
-     $id= $user->id;
-
-        if($data['category'] == "student"){
         
-            Student::create([
-                'user_id' => $id, 
-                'student_id' => mt_rand(100000, 999999)
-                
-            ]);   
-        }else{
-            if($data['category'] == "teacher"){
         
-                Teacher::create([
-                    'user_id' => $id, 
-                    'class_id' => mt_rand(100000, 999999)
-                    
-                ]);   
-            }
-        }
     }
 }
