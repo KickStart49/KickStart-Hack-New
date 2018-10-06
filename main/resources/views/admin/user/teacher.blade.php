@@ -1,6 +1,6 @@
 @extends('layouts.adminlayout')
 @section('content')
-<div class="row">
+    <div class="row">
 
             <div class="col-lg-6">
               <div class="card">
@@ -24,30 +24,65 @@
                     
                     <h3>Assignments</h3>
                     <div>
-                      <form method="post" href="{{route('assignment.add')}}">
-                        {{csrf_field()}}
-                      <input type="text" name="Assignment title" placeholder="Assignment title"><br><br> 
+                    <form href={{route('assignment.add')}} method="post">
+                    {{csrf_field()}}
+                    <input type="text" name="Assignment title" placeholder="Assignment title"><br><br> 
                     <input type="date" name="duedate">
-
                       <input type="checkbox" name="list1" value="lock">Lock this assignment after its due date<br>
                       <input type="checkbox" name="list2" value="gradebook">Add to Gradebook<br>
-                      <input type="text" name="Assignment Discription" placeholder="Assignment Description">
-                      <input type="text" name="Select classes" placeholder="Select Classes"> 
+                      <input type="text" name="Assignment Discription" placeholder="assignment Discription">
+                      <input type="text" name="Select classes" placeholder="Select classes"> 
                       <input type="file" name="attach a file">
-                      <input type="submit" class="btn" value="Submit">
+                      <button>Submit</button>
 
                     </form>
                   </div>
                   </div>
                   <div id="Tokyo" class="tabcontent">
-                    <h3>Tokyo</h3>
-                    <p>Tokyo is the capital of Japan.</p>
-                  </div></p>
+                    <div><h3>Members</h3>
+                    <span><input type="text" name="searchmembers" placeholder="search members"></span>
+                    </div>
+                    <div class="row">
+                                <div class="col-md-10">
+                                  <div class="card">
+                                    <ul class="nav nav-tabs" role="tablist">
+                                        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Student</a></li>
+                                        <li style="margin-left: 5%;" role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Parents</a></li>
+                                        
+                                    </ul>
+
+                                    <!-- Tab panes -->
+                                    <div class="tab-content">
+                                        <div role="tabpanel" class="tab-pane active" id="home">
+                                          <div>
+                                            <img style="width: 20%; border-radius: 50%; height: 20%;" src="img/avatar-1.jpg">
+                                            <span style="margin-left: 5%;">Dhruv J Patel</span>
+                                            <a href="#"><span style="margin-left: 40%; font-size: 80%;">Progress</span></a>
+                                            <a href="#"><span style="margin-left: 80%; font-size: 80%;">Manage</span></a>
+                                          </div>
+                                          <hr>
+                                          <div>
+                                            <img style="width: 20%; border-radius: 50%; height: 20%;" src="img/avatar-2.jpg">
+                                            <span style="margin-left: 5%;">Dhruv J Patel</span>
+                                            <a href="#"><span style="margin-left: 40%; font-size: 80%;">Progress</span></a>
+                                            <a href="#"><span style="margin-left: 80%; font-size: 80%;">Manage</span></a>
+                                          </div>
+                                          <div style="margin-top: 5%;" align="right">
+                                            <span>2 number of students</span>
+                                          </div>
+                                        </div>
+                                        <div role="tabpanel" class="tab-pane" id="profile">aergerg.</div>
+                                    </div>
+                                  </div>
+                                </div>
+                      </div>
+                
+                    </div>
                   </section>
                 
               </div>
             </div>
-            <div class="col-lg-6">
+            <!-- <div class="col-lg-2">
               <div class="card">
                 <div class="card-header d-flex align-items-center">
                   <h4>Horizontal Form</h4>
@@ -57,7 +92,7 @@
                   
                 </div>
               </div>
-            </div>
+            </div> -->
             
             
             
@@ -101,5 +136,5 @@ function openCity(evt, cityName) {
           </div>
         </div>
       </footer>
-    </div>      
+    </div> 
 @stop
