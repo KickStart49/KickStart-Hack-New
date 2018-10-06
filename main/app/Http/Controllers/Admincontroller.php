@@ -70,6 +70,7 @@ class Admincontroller extends Controller
         // $assignment->fill($request->all());
         $assignment->title = $request -> Assignment_title;
         $assignment->lastdate = $request->duedate;
+        $assignment->about=$request->about;
         $featured=$request->featured;
         $featured_new_name=time().$featured->getClientOriginalName();
         $featured->move('uploads/assignment',$featured_new_name);
@@ -77,21 +78,21 @@ class Admincontroller extends Controller
         $assignment->save();
          
     }
-    public function stu_search(Request $request)
-    {
-        $re = $request->searchmembers;
+    // public function stu_search(Request $request)
+    // {
+    //     $re = $request->searchmembers;
         
     
-    if ($re){
+    // if ($re){
 
         
 
-        $search= student_teacher::all();
+    //     $search= student_teacher::all();
            
-        $results = DB::table('users')->where('name','=',$re)->first();
-        dd($results->all());
-    }
-    }
+    //     $results = DB::table('users')->where('name','=',$re)->first();
+    //     dd($results->all());
+    // }
+    // }
    
 
 }

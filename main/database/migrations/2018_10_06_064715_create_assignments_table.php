@@ -17,6 +17,7 @@ class CreateAssignmentsTable extends Migration
         Schema::create('assignments', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
+            $table->string('about');
             $table->date('lastdate');
             $table->string('featured')->nullable();
             $table->timestamps();
