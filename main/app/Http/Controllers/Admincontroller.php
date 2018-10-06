@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Student;
 use App\User;
 use App\Teacher;
+use App\student_teacher;
 use DB;
 use App\Assignment;
 
@@ -36,47 +37,28 @@ class Admincontroller extends Controller
         
         return view('student_teacher.index')->with('users',User::all());
     }
-    // public function verification(Request $request)
-    // {
-    //     if($request->category == "student")
-    //     {
-            
-<<<<<<< HEAD
-            $currentuserid = Auth::id();
-            $user = User::all()->find($currentuserid)->student;
-            
-            $st = $user;
-            
-            $t=Teacher::where('class_id',$request->classcode)->first();
-=======
-    //         $currentuserid = Auth::id();
-    //         $users = User::all();
-    //         $user = User::find('id',$currentuserid)->first();
-            
-    //         $user
-
-    //         $t=Teacher::where('class_id',$request->classcode)->first();
->>>>>>> f4fc06688b365c9d3d9f82a0fbf41c922ec08391
-            
-    //         if($t){
-    //             $t->student()->attach($st);
-    //         }
-
-    //         return redirect()->route('categories');
-
-    //         // $class_id=$request->classcode;
+    public function verification(Request $request)
+    {
+        $currentuserId = Auth::id();
+        $student = DB::table('students')->where('user_id',$currentuserId)->first();
+        $teacher=Teacher::where('class_id',$request->classcode)->first();
         
-            // $teacher = DB::table('teachers')->where('class_id',$class_id)->first();
+        if($request->category == "student")
+        {
             
-            // if ($teacher) {
+            if($teacher){
+                
+                $quote = new student_teacher;
+                $quote->fill($request->all());
+                $quote->teacher_id = $teacher->class_id;
+                $quote->student_id = $student->student_id; 
+                $quote->save();  
+            }
 
-            //     $id = Auth::id();
-            //     array_add($teacher->stu_arr,'userid', $id);
-            //     Teacher::insert();
-                   
-            // }
-       // }
-    //}
+            return redirect()->route('home');
+
+       }
+    }
     public function assi_add(Request $request){
 
           
