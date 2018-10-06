@@ -24,7 +24,7 @@
                     
                     <h3>Assignments</h3>
                     <div>
-                                        <form>
+                      <form href="{{route('assignment.add')}}" method="post">
                       <input type="text" name="Assignment title" placeholder="Assignment title"><br><br> 
                     <input type="date" name="duedate">
 

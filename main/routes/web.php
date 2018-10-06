@@ -70,10 +70,8 @@ Route::prefix('login')->group(function () {
  
 });
 Route::prefix('admin')->group(function () {
-    Route::get('forms', [
-        'uses' => 'Admincontroller@formindex',
-        'as'=>'admin.forms'
-    ]);    
+
+
     Route::get('charts', [
         'uses' => 'Admincontroller@index',
         'as'=>'admin.charts'
@@ -133,5 +131,13 @@ Auth::routes(['verify' => true]);
 // Route::get('/signup', function () {
 //     return view('auth.register.register');
 // });
+Route::get('/teacher', [
+        'uses' => 'Admincontroller@teacher',
+        'as'=>'teacher'
+    ]); 
+    Route::post('/assignment/add', [
+        'uses' => 'Admincontroller@assi_add',
+        'as'=>'assignment.add'
+    ]);
 
 

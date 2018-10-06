@@ -15,7 +15,7 @@ class Admincontroller extends Controller
     {
     	return view('admin.charts');
     }
-    public function formindex()
+    public function teacher()
     {
     	return view('admin.user.teacher');
     }
@@ -61,4 +61,15 @@ class Admincontroller extends Controller
     //         // }
     //     }
     // }
+    public function assi_add(Request $request)
+    {
+        $post=::create([
+            'title'=>$request->title,
+            'content'=>$request->content,
+            'featured'=>'uploads/post/'. $featured_new_name,
+            'category_id'=>$request->category_id,
+            'slug'=>str_slug($request->title)
+            ]);
+        dd($request->all());
+    }
 }
