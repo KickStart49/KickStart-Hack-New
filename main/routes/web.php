@@ -145,4 +145,3 @@ Route::post('/student/search', [
     'as'=>'student.search'
 ]);
 
-

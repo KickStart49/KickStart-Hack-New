@@ -87,7 +87,7 @@
               <a class="nav-link js-scroll-trigger" href="#contact">About Us</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#">Login</a>
+              <a class="nav-link js-scroll-trigger" href="{{route('logindemo')}}">Login</a>
             </li>
           </ul>
         </div>
@@ -109,9 +109,9 @@
           </div>
           <div class="col-lg-8 mx-auto">
             <p class="text-faded mb-5">Millions of learners around the world use Kickstart to find the resources they need and connect with educators.</p>
-            <a class="btn btn-primary btn-xl js-scroll-trigger" href="{{route('student')}}" style="margin: 3%">I am Student </a>
-            <a class="btn btn-primary btn-xl js-scroll-trigger" href="#" style="margin: 3%">I am Teacher</a>
-            <a class="btn btn-primary btn-xl js-scroll-trigger" href="#" style="margin: 3%">I am Parent</a>
+            <a class="btn btn-primary btn-xl js-scroll-trigger" href="{{route('register')}}" style="margin: 3%">I am Student </a>
+            <a class="btn btn-primary btn-xl js-scroll-trigger" href="{{route('register')}}" style="margin: 3%">I am Teacher</a>
+            <a class="btn btn-primary btn-xl js-scroll-trigger" href="{{route('register')}}" style="margin: 3%">I am Parent</a>
           </div>
         </div>
       </div>
@@ -176,25 +176,17 @@
                         <table class="table" id="myTable">
                           <thead>
                             <tr>
-                              <th>#</th>
-                              <th>Firstname</th>
-                              <th>Lastname</th>
+                              <th>Name</th>
+                              <th>Subject</th>
                               <th>Age</th>
-                              <th>City</th>
-                              <th>Country</th>
-                              <th>Sex</th>
-                             
+                              
                             </tr>
                           </thead>
                           <tbody>
                             <tr>
-                              <td>1</td>
                               <td>Anna</td>
                               <td>Pitt</td>
                               <td>35</td>
-                              <td>New York</td>
-                              <td>USA</td>
-                              <td>Female</td>
                               
                             </tr>
                           </tbody>

@@ -17,6 +17,7 @@ class Admincontroller extends Controller
     {
     	return view('admin.charts');
     }
+    
     public function formindex()
     {
     	return view('admin.forms');
