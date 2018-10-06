@@ -52,10 +52,9 @@ s.setAttribute('data-timestamp', +new Date());
                     {{csrf_field()}}
                       <input class="pad" style="margin-top: 2%;" type="text" name="Assignment title" placeholder="Assignment title"><br><br> 
                       <input class="pad" style="margin-top: 2%;" type="date" name="duedate">
-                      <form>
                         <input class="pad" style="margin-top: 3%;" type="checkbox" name="list1" value="lock">Lock this assignment after its due date<br>
                         <input class="pad" style="margin-top: 3%;" type="checkbox" name="list2" value="gradebook">Add to Gradebook<br>
-                        <input class="pad" style="margin-top: 3%;" type="text" name="Assignment Discription" placeholder="assignment Discription">
+                        <input class="pad" style="margin-top: 3%;" type="text" name="about" placeholder="assignment Discription">
                         <select  style="width: 10%; padding-top: 0.75%; padding-bottom: 0.75%; margin-left: 5%;">
                           <option value="item1">item1</option>
                           <option value="item2">item2</option>

@@ -156,7 +156,10 @@ Route::post('/student/search', [
     'as'=>'student.search'
 ]);
 
+<<<<<<< HEAD
 Route::get('/admin', [
     'uses' => 'Admincontroller@showadmin',
     'as'=>'showadmin'
 ]);
+=======
+>>>>>>> f77f3b0f62b2abea99e393bdec2cc0736cf7ebbb
