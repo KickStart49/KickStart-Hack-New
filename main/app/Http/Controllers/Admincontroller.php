@@ -42,9 +42,9 @@ class Admincontroller extends Controller
             
             $currentuserid = Auth::id();
             $users = User::all();
-            $user = DB::table('users')->where('id',$currentuserid)->first();
+            $user = User::find('id',$currentuserid)->first();
             
-
+            $user
 
             $t=Teacher::where('class_id',$request->classcode)->first();
             
