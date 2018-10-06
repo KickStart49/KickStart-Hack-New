@@ -15,7 +15,7 @@ class CreateTeachersTable extends Migration
     {
         Schema::create('teachers', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned()->default(0);
+            $table->integer('user_id')->default(0);
             $table->integer('class_id')->unique();
             $table->timestamps();
         });
