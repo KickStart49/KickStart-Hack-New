@@ -8,6 +8,7 @@ use App\Student;
 use App\User;
 use App\Teacher;
 use DB;
+use App\Assignment;
 
 class Admincontroller extends Controller
 {
@@ -35,25 +36,35 @@ class Admincontroller extends Controller
         
         return view('student_teacher.index')->with('users',User::all());
     }
-    public function verification(Request $request)
-    {
-        if($request->category == "student")
-        {
+    // public function verification(Request $request)
+    // {
+    //     if($request->category == "student")
+    //     {
             
+<<<<<<< HEAD
             $currentuserid = Auth::id();
             $user = User::all()->find($currentuserid)->student;
             
             $st = $user;
             
             $t=Teacher::where('class_id',$request->classcode)->first();
+=======
+    //         $currentuserid = Auth::id();
+    //         $users = User::all();
+    //         $user = User::find('id',$currentuserid)->first();
             
-            if($t){
-                $t->student()->attach($st);
-            }
+    //         $user
 
-            return redirect()->route('categories');
+    //         $t=Teacher::where('class_id',$request->classcode)->first();
+>>>>>>> f4fc06688b365c9d3d9f82a0fbf41c922ec08391
+            
+    //         if($t){
+    //             $t->student()->attach($st);
+    //         }
 
-            // $class_id=$request->classcode;
+    //         return redirect()->route('categories');
+
+    //         // $class_id=$request->classcode;
         
             // $teacher = DB::table('teachers')->where('class_id',$class_id)->first();
             
@@ -64,10 +75,18 @@ class Admincontroller extends Controller
             //     Teacher::insert();
                    
             // }
-        }
-    }
+       // }
+    //}
     public function assi_add(Request $request){
-        dd($request->all());
+
+          
+            $assignment=Assignment::create([
+        'title'=>$request->title,
+        'about'=>$request->about,
+        'lastdate'=>$request->lastdate,
+        'avatar'=>'uploads/assignment',
+        dd($request->all())
+    ]);
     }
    
 
