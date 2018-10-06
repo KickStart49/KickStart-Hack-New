@@ -19,17 +19,17 @@ class Admincontroller extends Controller
     {
     	return view('admin.forms');
     }
-    public function createuser()
-    {
-    	return view('admin.user.create');
-	}
-    public function student($id)
-    {
-        $user=User::find($id);
-        $user->permission="student";
-        $user->save();
-        return redirect()->back();
-    }
+ //    public function createuser()
+ //    {
+ //    	return view('admin.user.create');
+	// }
+ //    public function student($id)
+ //    {
+ //        $user=User::find($id);
+ //        $user->permission="student";
+ //        $user->save();
+ //        return redirect()->back();
+ //    }
     public function code()
     {
         
@@ -39,13 +39,17 @@ class Admincontroller extends Controller
     {
         if($request->category == "student")
         {
-
+            
+            $currentuserid = Auth::id();
+            $users = User::all();
+            $user = DB::table('users')->where('id',$currentuserid)->first();
+            
             $t=Teacher::where('class_id',$request->classcode)->first();
-            $tval=$request->classcode;
-            $tarray = array('0');
-            array_push($tarray,$tval)
-            $t->stu_arr = $tarray;
-            $t->save();
+            
+            if($t){
+                $t->student()->attach($st);
+            }
+
             return redirect()->route('categories');
 
             // $class_id=$request->classcode;

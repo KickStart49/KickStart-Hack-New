@@ -10,4 +10,8 @@ class ParentClass extends Model
     {
         return $this->hasMany('App\Student');
     }
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 }

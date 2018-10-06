@@ -18,5 +18,9 @@ class Student extends Model
     {
         return $this->belongsTo('App\Parent');
     }
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 
 }

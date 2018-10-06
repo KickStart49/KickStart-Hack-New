@@ -14,6 +14,7 @@
 </head>
 <body>
   <section>
+    <div id="google_translate_element"></div>
   <div class="container-fluid">
     <div class="mainlogin col-xl-4 col-sm-12 login">
       <div class="loadingline hidden"></div>
@@ -34,8 +35,9 @@
     </span>
   </span>
 </section>
-
 <script type="text/javascript" src="{{ asset('js/jquery.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/drive.js') }}"></script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script type="text/javascript" src="{{ asset('js/tostr.js') }}"></script>
 <script type="text/javascript">
   toastr.options = {

@@ -13,6 +13,11 @@ class Teacher extends Model
     {
         return $this->belongsToMany('App\Student');
     }
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
+
 
 
 }

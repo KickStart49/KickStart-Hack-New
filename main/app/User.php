@@ -33,4 +33,16 @@ class User extends Authenticatable
     {
         return $this->hasOne('App\Profile');
     }
+    public function student()
+    {
+        return $this->hasMany('App\Student');
+    }
+    public function teacher()
+    {
+        return $this->hasMany('App\Teacher');
+    }
+    public function parent()
+    {
+        return $this->hasMany('App\Parent');
+    }
 }
