@@ -25,6 +25,13 @@
     <link rel="stylesheet" href="css/custom.css">
     <!-- Favicon-->
     <link rel="shortcut icon" href="img/favicon.ico">
+<<<<<<< HEAD
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+	<script type="text/javascript" src="js/try.js"></script>
+    <style>
+    .nav-tabs { border-bottom: 2px solid #DDD;}
+=======
     <style type="text/css">
       /* Style the tab */
       .tab {
@@ -61,6 +68,33 @@
           border: 1px solid #ccc;
           border-top: none;
       }
+
+      .nav-tabs { border-bottom: 2px solid #DDD; }
+>>>>>>> def99e3f56f738e48eafc51096b26e718822f3e8
+    .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover { border-width: 0; }
+    .nav-tabs > li > a { border: none; color: #666; }
+        .nav-tabs > li.active > a, .nav-tabs > li > a:hover { border: none; color: #4285F4 !important; background: transparent; }
+        .nav-tabs > li > a::after { content: "";  height: 2px; position: absolute; width: 100%; left: 0px; bottom: -1px; transition: all 250ms ease 0s; transform: scale(0); }
+    .nav-tabs > li.active > a::after, .nav-tabs > li:hover > a::after { transform: scale(1); }
+.tab-nav > li > a::after { background: #21527d none repeat scroll 0% 0%; color: #fff; }
+.tab-pane { padding: 15px 0; }
+.tab-content{padding:20px}
+<<<<<<< HEAD
+.input
+{
+  -moz-border-radius: 20px;
+ border-radius: 15px;
+ width: 100%;
+    border:solid 1px black;
+    padding:5px;
+}
+.button3 {border-radius: 8px; float: right;}
+.card {background: #FFF none repeat scroll 0% 0%; box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3); margin-bottom: 30px;}
+=======
+
+.card {background: #FFF none repeat scroll 0% 0%; }
+>>>>>>> def99e3f56f738e48eafc51096b26e718822f3e8
+body{ background: #EDECEC; padding:50px}
     </style>
   </head>
   <body>
@@ -214,19 +248,82 @@
                   </div>
 
                   <div id="Paris" class="tabcontent">
-                    <h3>Paris</h3>
-                    <p>Paris is the capital of France.</p> 
-                  </div>
+                    
+                    <h3>Assignments</h3>
+                    <div>
+                    <input type="text" name="Assignment title" placeholder="Assignment title"><br><br> 
+                    <input type="date" name="duedate">
+                    <form>
+                      <input type="checkbox" name="list1" value="lock">Lock this assignment after its due date<br>
+                      <input type="checkbox" name="list2" value="gradebook">Add to Gradebook<br>
+                      <input type="text" name="Assignment Discription" placeholder="assignment Discription">
+                      <input type="text" name="Select classes" placeholder="Select classes"> 
+                      <input type="file" name="attach a file">
+                      <button>Submit</button>
 
+                    </form>
+                  </div>
+                  </div>
                   <div id="Tokyo" class="tabcontent">
-                    <h3>Tokyo</h3>
-                    <p>Tokyo is the capital of Japan.</p>
-                  </div></p>
+                    <div><h3>Members</h3>
+                    <span><input type="text" name="searchmembers" placeholder="search members"></span>
+                    </div>
+                    <div class="row">
+                                <div class="col-md-10">
+                                  <div class="card">
+                                    <ul class="nav nav-tabs" role="tablist">
+                                        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Student</a></li>
+                                        <li style="margin-left: 5%;" role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Parents</a></li>
+                                        
+                                    </ul>
+
+                                    <!-- Tab panes -->
+                                    <div class="tab-content">
+<<<<<<< HEAD
+                                        <div role="tabpanel" class="tab-pane active" id="home">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+                                        <div role="tabpanel" class="tab-pane" id="profile">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+                                        <div role="tabpanel" class="tab-pane" id="messages">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</div>
+                                        <div role="tabpanel" class="tab-pane" id="settings">
+										<input type="text" placeholder="Question" style="padding-left: 40px; border-radius: 5%;" size="50"/><br><br>
+										<div class="input_fields_wrap">
+											<button class="add_field_button">Add More Fields</button>
+											<br>
+											<div><br><input type="text" style="border-radius: 5%;" placeholder="Answer" name="mytext[]"></div><br>
+										</div>
+										<input style="border-radius: 5%" type="text" placeholder="Search.." size="50" name="search"><br><br>
+										<button class="button button3 size">Send</button>
+=======
+                                        <div role="tabpanel" class="tab-pane active" id="home">
+                                          <div>
+                                            <img style="width: 20%; border-radius: 50%; height: 20%;" src="img/avatar-1.jpg">
+                                            <span style="margin-left: 5%;">Dhruv J Patel</span>
+                                            <a href="#"><span style="margin-left: 40%; font-size: 80%;">Progress</span></a>
+                                            <a href="#"><span style="margin-left: 80%; font-size: 80%;">Manage</span></a>
+                                          </div>
+                                          <hr>
+                                          <div>
+                                            <img style="width: 20%; border-radius: 50%; height: 20%;" src="img/avatar-2.jpg">
+                                            <span style="margin-left: 5%;">Dhruv J Patel</span>
+                                            <a href="#"><span style="margin-left: 40%; font-size: 80%;">Progress</span></a>
+                                            <a href="#"><span style="margin-left: 80%; font-size: 80%;">Manage</span></a>
+                                          </div>
+                                          <div style="margin-top: 5%;" align="right">
+                                            <span>2 number of students</span>
+                                          </div>
+                                        </div>
+                                        <div role="tabpanel" class="tab-pane" id="profile">aergerg.</div>
+>>>>>>> def99e3f56f738e48eafc51096b26e718822f3e8
+                                    </div>
+                                  </div>
+                                </div>
+                      </div>
+                
+                    </div>
                   </section>
                 
               </div>
             </div>
-            <div class="col-lg-6">
+            <!-- <div class="col-lg-2">
               <div class="card">
                 <div class="card-header d-flex align-items-center">
                   <h4>Horizontal Form</h4>
@@ -236,7 +333,7 @@
                   
                 </div>
               </div>
-            </div>
+            </div> -->
             
             
             

@@ -8,39 +8,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
     <!-- Bootstrap CSS-->
-    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <!-- Font Awesome CSS-->
-    <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
     <!-- Fontastic Custom icon font-->
-    <link rel="stylesheet" href="{{ asset('css/fontastic.css') }}">
+    <link rel="stylesheet" href="css/fontastic.css">
     <!-- Google fonts - Roboto -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
     <!-- jQuery Circle-->
-    <link rel="stylesheet" href="{{asset('css/grasp_mobile_progress_circle-1.0.zmin.css')}}">
+    <link rel="stylesheet" href="css/grasp_mobile_progress_circle-1.0.0.min.css">
     <!-- Custom Scrollbar-->
-    <link rel="stylesheet" href="{{asset('css/jquery.mCustomScrollbar.css')}}">
+    <link rel="stylesheet" href="malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css">
     <!-- theme stylesheet-->
-    <link rel="stylesheet" href="{{asset('css/style.default.css')}}" id="theme-stylesheet">
+    <link rel="stylesheet" href="css/style.default.css" id="theme-stylesheet">
     <!-- Custom stylesheet - for your changes-->
-    {{-- <link rel="stylesheet" href="css/custom.css"> --}}
+    <link rel="stylesheet" href="css/custom.css">
     <!-- Favicon-->
-    <link rel="shortcut icon" href="{{asset('img/favicon.ico')}}">
-    <script src="{{asset('js/jquery.min.js')}}"></script>
-    <script src="{{asset('js/popper.min.js')}}"> </script>
-    <script src="{{asset('js/bootstrap.min.js')}}"></script>
-    <script src="{{asset('js/grasp_mobile_progress_circle-1.0.0.min.js')}}"></script>
-    <script src="{{asset('js/jquery.cookie.js')}}"> </script>
-    <script src="{{asset('js/Chart.min.js')}}"></script>
-    <script src="{{asset('js/jquery.validate.min.js')}}"></script>
-    <script src="{{asset('js/jquery.mCustomScrollbar.concat.min.js')}}"></script>
-    <script src="{{asset('js/charts-home.js')}}"></script>
-    <!-- Main File-->
-    <script src="{{asset('js/front.js')}}"></script>
-    <script src="{{asset('js/teacher.js')}}"></script>
-    <!-- Tweaks for older IEs--><!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <style type="text/css">
+      /* Style the tab */
+      .tab {
+          overflow: hidden;
+          border: 1px solid #ccc;
+          background-color: #f1f1f1;
+      }
+
+      /* Style the buttons that are used to open the tab content */
+      .tab button {
+          background-color: inherit;
+          float: left;
+          border: none;
+          outline: none;
+          cursor: pointer;
+          padding: 14px 16px;
+          transition: 0.3s;
+      }
+
+      /* Change background color of buttons on hover */
+      .tab button:hover {
+          background-color: #ddd;
+      }
+
+      /* Create an active/current tablink class */
+      .tab button.active {
+          background-color: #ccc;
+      }
+
+      /* Style the tab content */
+      .tabcontent {
+          display: none;
+          padding: 6px 12px;
+          border: 1px solid #ccc;
+          border-top: none;
+      }
+    </style>
   </head>
   <body>
     <!-- Side Navbar -->
@@ -149,5 +170,140 @@
           </div>
         </nav>
       </header>
-    @yield('content');
+      <!--Breadcrumb -->
+      <script type="text/javascript">
+        function openCity(evt, cityName) {
+            // Declare all variables
+            var i, tabcontent, tablinks;
+
+            // Get all elements with class="tabcontent" and hide them
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            // Get all elements with class="tablinks" and remove the class "active"
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            // Show the current tab, and add an "active" class to the button that opened the tab
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+      </script>
+<div class="row">
+
+            <div class="col-lg-6">
+              <div class="card">
+                
+                  <section>
+                  <div class="tab">
+                    <button class="tablinks" onclick="openCity(event, 'London')">Post</button>
+                    <button class="tablinks" onclick="openCity(event, 'Paris')">Work</button>
+                    <button class="tablinks" onclick="openCity(event, 'Tokyo')">Members</button>
+                  </div>
+                  </section>
+
+                  <br>          
+                <section>
+                  <p><div id="London" class="tabcontent">
+                    <h3>Discussions</h3>
+                    <p>London is the capital city of England.</p>
+                  </div>
+
+                  <div id="Paris" class="tabcontent">
+                    
+                    <h3>Assignments</h3>
+                    <div>
+                    <input type="text" name="Assignment title" placeholder="assignment title"><br><br> 
+                    <input type="date" name="duedate">
+                    <form>
+                      <input type="checkbox" name="list1" value="lock">Lock this assignment after its due date<br>
+                      <input type="checkbox" name="list2" value="gradebook">Add to Gradebook<br>
+                      <input type="text" name="Assignment Discription" placeholder="assignment description">
+                      <input type="text" name="Select classes" placeholder="select classes"> 
+                      <input type="file" name="attach a file">
+                      <button>Submit</button>
+
+                    </form>
+                  </div>
+                  </div>
+                  <div id="Tokyo" class="tabcontent">
+                    <h3>Tokyo</h3>
+                    <p>Tokyo is the capital of Japan.</p>
+                  </div></p>
+                  </section>
+                
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="card">
+                <div class="card-header d-flex align-items-center">
+                  <h4>Horizontal Form</h4>
+                </div>
+                <div class="card-body">
+                  <p>Lorem ipsum dolor sit amet consectetur.</p>
+                  
+                </div>
+              </div>
+            </div>
+            
+            
+            
+          </div>
+<!-- <script>
+function openCity(evt, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+</script>
+</div> -->
+
+<div style="margin-left: 5%; margin-top: 5%;" id="Members" class="tabcontent">
+  <h3>Members</h3>
+  <p>Members is the capital of Japan.</p>
+</div>
+
+
+
+            <!-- Counts Section -->
+     
+      <footer class="main-footer">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-sm-6">
+              <p>Your company &copy; 2017-2019</p>
+            </div>
+            <div class="col-sm-6 text-right">
+              <p>Design by <a href="https://bootstrapious.com" class="external">Bootstrapious</a></p>
+              <!-- Please do not remove the backlink to us unless you support further theme's development at https://bootstrapious.com/donate. It is part of the license conditions and it helps me to run Bootstrapious. Thank you for understanding :)-->
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <!-- JavaScript files-->
+    <script src="jquery/jquery.min.js"></script>
+    <script src="popper.js/umd/popper.min.js"> </script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/grasp_mobile_progress_circle-1.0.0.min.js"></script>
+    <script src="jquery.cookie/jquery.cookie.js"> </script>
+    <script src="chart.js/Chart.min.js"></script>
+    <script src="jquery-validation/jquery.validate.min.js"></script>
+    <script src="malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="js/charts-home.js"></script>
+    <!-- Main File-->
+    <script src="js/front.js"></script>
+  </body>
 </html>
