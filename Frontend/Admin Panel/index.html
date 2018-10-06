@@ -184,31 +184,10 @@ body{ background: #EDECEC; padding:50px}
         </nav>
       </header>
       <!--Breadcrumb -->
-      <script type="text/javascript">
-        function openCity(evt, cityName) {
-            // Declare all variables
-            var i, tabcontent, tablinks;
-
-            // Get all elements with class="tabcontent" and hide them
-            tabcontent = document.getElementsByClassName("tabcontent");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-            }
-
-            // Get all elements with class="tablinks" and remove the class "active"
-            tablinks = document.getElementsByClassName("tablinks");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
-
-            // Show the current tab, and add an "active" class to the button that opened the tab
-            document.getElementById(cityName).style.display = "block";
-            evt.currentTarget.className += " active";
-        }
-      </script>
+    
 <div class="row">
 
-            <div class="col-lg-6">
+            <div class="col-lg-8">
               <div class="card">
                 
                   <section>
@@ -227,21 +206,92 @@ body{ background: #EDECEC; padding:50px}
                   </div>
 
                   <div id="Paris" class="tabcontent">
-                    
-                    <h3>Assignments</h3>
-                    <div>
-                    <input type="text" name="Assignment title" placeholder="Assignment title"><br><br> 
-                    <input type="date" name="duedate">
-                    <form>
-                      <input type="checkbox" name="list1" value="lock">Lock this assignment after its due date<br>
-                      <input type="checkbox" name="list2" value="gradebook">Add to Gradebook<br>
-                      <input type="text" name="Assignment Discription" placeholder="assignment Discription">
-                      <input type="text" name="Select classes" placeholder="Select classes"> 
-                      <input type="file" name="attach a file">
-                      <button>Submit</button>
-
-                    </form>
+                    <div> 
+                      <h3>Assignments</h3>
+                      <input type="text" name="Assignment title" placeholder="Assignment title"><br><br> 
+                      <input type="date" name="duedate">
+                      <form>
+                        <input type="checkbox" name="list1" value="lock">Lock this assignment after its due date<br>
+                        <input type="checkbox" name="list2" value="gradebook">Add to Gradebook<br>
+                        <input type="text" name="Assignment Discription" placeholder="assignment Discription">
+                        <input type="text" name="Select classes" placeholder="Select classes"> 
+                        <input type="file" name="attach a file"><br>
+                        <button style="margin-top: 2%;">Submit</button>
+                      </form>
                   </div>
+                  <div>
+                  <h3 style="margin-top: 5%;">Add your question to start creating a quiz...</h3>
+                  <span>Type :</span><select  style="margin-left: 5%;">
+                    <option value="Multi Choice">Multi Choice</option>
+                    <option value="True False">True False</option>
+                    <option value="Short Answer">Short Answer</option>
+                    <option value="Fill in the blanks">Fill in the blanks</option>
+                    <option value="Matching">Matching</option>
+                   </select>
+                   <button style="margin-left: 5%;">+ADD Question</button>
+                   <p class="num">HIII</p>
+                </div>
+
+
+<div style="margin-top: 5%;" class="tab">
+  <button class="ta" onclick="openCity1(event, 'a1')" id="defaultOpen">Multi-option Questions</button>
+  <button class="ta" onclick="openCity1(event, 'a2')">True or False</button>
+  <button class="ta" onclick="openCity1(event, 'a3')">Short Answer</button>
+  <button class="ta" onclick="openCity1(event, 'a4')">Match Followings</button>
+</div>
+
+<div id="a1" class="tb">
+  <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+ <div class="multi">
+                  <textarea style="border:1px solid darkgrey; margin-top: 5%; width: 50%;" placeholder="Enter the question."></textarea>
+                  <form action="">
+                    <input type="radio" name="" value=""><input  style="margin-left: 3%;" type="text" name="" placeholder="Option"><br>
+                    <input type="radio" name="" value=""><input  style="margin-left: 3%;" type="text" name="" placeholder="Option"><br>
+                    <input type="radio" name="" value=""><input  style="margin-left: 3%;" type="text" name="" placeholder="Option"><br>
+                    <input type="radio" name="" value=""><input  style="margin-left: 3%;" type="text" name="" placeholder="Option"><br>
+                    <textarea style="margin-top: 5%;" placeholder="Mention Answer"></textarea>
+                </form>
+                </div>
+</div>
+
+<div id="a2" class="tb">
+  <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+                   <div class="truefalse">
+                  <textarea style="border:1px solid darkgrey; margin-top: 5%; width: 50%;" placeholder="Enter the question."></textarea>
+                  <form action="">
+                    <input type="radio" style="margin-left: 3%;" type="text" name="" placeholder="True"><span>True</span><br>
+                    <input type="radio" style="margin-left: 3%;" type="text" name="" placeholder="False"><span>False</span><br>
+                    <textarea style="margin-top: 5%;" placeholder="Mention Answer"></textarea>
+                </form>
+                </div>
+</div>
+
+<div id="a3" class="tb">
+  <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+  <div class="Shortanswer">
+      <textarea style="border:1px solid darkgrey; margin-top: 5%; width: 50%;" placeholder="Enter the question."></textarea>
+      </div>
+</div>
+<div id="a4" class="tb">
+  <span onclick="this.parentElement.style.display='none'" class="topright">&times</span>
+   <div class="Matching">
+                  <span>A</span><textarea style="border:1px solid darkgrey; margin-top: 5%; width: 25%;" placeholder="Enter the question."></textarea><span style=" margin-left: 5%;">1</span><textarea style="border:1px solid darkgrey; margin-top: 5%; width: 25%;" placeholder="Enter the question."></textarea>
+                  <br>
+                  <span>B</span><textarea style="border:1px solid darkgrey; margin-top: 5%; width: 25%;" placeholder="Enter the question."></textarea><span style=" margin-left: 5%;">2</span><textarea style="border:1px solid darkgrey; margin-top: 5%; width: 25%;" placeholder="Enter the question."></textarea>
+                  <br>
+                  <span>C</span><textarea style="border:1px solid darkgrey; margin-top: 5%; width: 25%;" placeholder="Enter the question."></textarea><span style=" margin-left: 5%;">3</span><textarea style="border:1px solid darkgrey; margin-top: 5%; width: 25%;" placeholder="Enter the question."></textarea>
+                  <br>
+                </div>
+</div>
+<div align="center">
+ <button style="margin-top: 5%;">Submmit</button>
+</div>
+
+
+                
+
+                 
+               
                   </div>
                   <div id="Tokyo" class="tabcontent">
                     <div><h3>Members</h3>
@@ -343,6 +393,50 @@ function openCity(evt, cityName) {
       </footer>
     </div>
     <!-- JavaScript files-->
+      <script type="text/javascript">
+        function openCity(evt, cityName) {
+            // Declare all variables
+            var i, tabcontent, tablinks;
+
+            // Get all elements with class="tabcontent" and hide them
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            // Get all elements with class="tablinks" and remove the class "active"
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            // Show the current tab, and add an "active" class to the button that opened the tab
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }$(document).ready(function () {
+        $(".num").click(function () {
+          alert("hi there!");
+        });
+        });
+      </script>
+    <script>
+function openCity1(evt, cityName) {
+    var i, tb, ta;
+    tb = document.getElementsByClassName("tb");
+    for (i = 0; i < tb.length; i++) {
+       tb[i].style.display = "none";
+    }
+    ta = document.getElementsByClassName("ta");
+    for (i = 0; i < ta.length; i++) {
+        ta[i].className = ta[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
     <script src="jquery/jquery.min.js"></script>
     <script src="popper.js/umd/popper.min.js"> </script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
