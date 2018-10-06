@@ -10,7 +10,7 @@ class profilecontroller extends Controller
 {
     public function user(Request $request){
     	$url = $request->url();
-    	$username = str_slug(str_after($url,'192.168.43.124:8000/in/'));
+    	$username = str_slug(str_after($url,'127.0.0.1:8000/in/'));
 
     	$user = DB::table('users')->where('name', $username)->first();
 
@@ -23,7 +23,7 @@ class profilecontroller extends Controller
 		    	if($authuser->name == $user->name)
 		    	{
 		    		return view('profile.profile')->with('user',$user)
-		    						->with('edit','true');
+		    						->with('edit','true')->with('id', 'some');
 		    	}else{
 		    		return view('profile.profile')->with('user',$user);
 		    }

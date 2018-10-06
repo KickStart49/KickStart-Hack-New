@@ -36,8 +36,9 @@
 <div class="container bootstrap snippet">
     <div class="row">
       <div align="center" class="col-sm-10"><h1>User Profile</h1></div>
-      
-
+      @if(!empty($id))
+      <div>Your Class Id : {{ $id }}</div>
+      @endif
     </div>
     <div class="row">
       <div class="col-sm-3"><!--left col-->

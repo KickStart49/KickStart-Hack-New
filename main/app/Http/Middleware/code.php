@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Middleware;
-
+use Illuminate\Support\Facades\Auth;
 use Closure;
-
+use App\User;
+use DB;
 class code
 {
     /**
@@ -15,7 +16,16 @@ class code
      */
     public function handle($request, Closure $next)
     {
-        
-        return $next($request);
+        $response = $next($request);
+
+        $currentuserId = Auth::id();
+        $user = DB::table('users')->where('id',$currentuserId)->first();
+        if ($user->permission == "student") {
+            return redirect()->route('permission')->with('permission','student')->with('user',$user);   
+        }elseif ($user->permission == "parent") {
+            return redirect()->route('permission')->with('permission','parent')->with('user',$user);   
+        }
+           
+        return $response;
     }
 }

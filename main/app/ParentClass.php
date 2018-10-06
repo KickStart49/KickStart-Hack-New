@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Parent extends Model
+class ParentClass extends Model
 {
     public function student()
     {

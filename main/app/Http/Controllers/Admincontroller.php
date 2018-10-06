@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Student;
+use App\User;
 
 class Admincontroller extends Controller
 {
@@ -18,5 +20,17 @@ class Admincontroller extends Controller
     {
     	return view('admin.user.create');
 	}
+    public function student($id)
+    {
+        $user=User::find($id);
+        $user->permission="student";
+        $user->save();
+        return redirect()->back();
+    }
+    public function code()
+    {
+        
+        return view('student_teacher.index')->with('users',User::all());
+    }
 	
 }

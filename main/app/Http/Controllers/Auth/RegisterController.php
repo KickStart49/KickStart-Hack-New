@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
-
+use App\Teacher;
+use App\Student;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -64,6 +65,15 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        if($data['category'] == "student"){
+         Student::create([
+            'student_id' => mt_rand(100000, 999999),
+        ]);   
+        }elseif($data['category'] == "teacher"){
+         Teacher::create([
+            'class_id' => mt_rand(100000, 999999),
+        ]);   
+        }
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
