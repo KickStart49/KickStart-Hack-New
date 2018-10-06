@@ -1,5 +1,6 @@
 $(document).ready(function () {
-  
+  toastr.info("No language barrier here.You can select among 100+ languges"); 
+toastr.info("Step 1 : Enter Your Email");  
   $('#email').focusout(function() {
       $('.emaillabel').css({
           'top': '68%',

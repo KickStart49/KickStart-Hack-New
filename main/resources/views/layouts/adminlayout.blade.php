@@ -22,11 +22,14 @@
     <link rel="stylesheet" href="{{asset('css/jquery.mCustomScrollbar.css')}}">
     <!-- theme stylesheet-->
     <link rel="stylesheet" href="{{asset('css/style.default.css')}}" id="theme-stylesheet">
+    <link rel="stylesheet" href="{{asset('css/inline.css')}}" >
     <!-- Custom stylesheet - for your changes-->
     {{-- <link rel="stylesheet" href="css/custom.css"> --}}
     <!-- Favicon-->
     <link rel="shortcut icon" href="{{asset('img/favicon.ico')}}">
     <script src="{{asset('js/jquery.min.js')}}"></script>
+    <script src="{{asset('js/inline.js')}}"></script>
+    <script src="{{asset('js/word.js')}}"></script>
     <script src="{{asset('js/popper.min.js')}}"> </script>
     <script src="{{asset('js/bootstrap.min.js')}}"></script>
     <script src="{{asset('js/grasp_mobile_progress_circle-1.0.0.min.js')}}"></script>
@@ -43,7 +46,7 @@
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
   </head>
   <body>
-    <!-- Side Navbar -->
+  <!-- Side Navbar -->
     <nav class="side-navbar">
       <div class="side-navbar-wrapper">
         <!-- Sidebar Header    -->
@@ -149,5 +152,6 @@
           </div>
         </nav>
       </header>
-    @yield('content');
+      <!--Breadcrumb -->
+    @yield('content')
 </html>

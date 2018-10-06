@@ -36,3 +36,6 @@
     <div style="text-align:center;"><a  href="{{ route('home') }}">{{ __('Homepage') }}</a></div>
     
 @stop
+@section('script')
+	<script type="text/javascript">toastr.success("Your code has been successfuly generated"); toastr.info("Step 4 : Verify your Teacher's/child's code to enter in our KickStart Classroom"); </script>
+@stop

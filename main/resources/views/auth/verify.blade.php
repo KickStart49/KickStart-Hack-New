@@ -17,4 +17,7 @@
                     <br><br>    
                 </div>
                
-@endsection
+@stop
+
+@section('script')
+    <script type="text/javascript">toastr.info("Step 3: Verify Your Email"); </script>

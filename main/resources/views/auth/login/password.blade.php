@@ -42,7 +42,7 @@
 <script>toastr.success('Welcome {{ session('email') }}');</script>
 	<script type="text/javascript">
 		$(document).ready(function () {
-  
+  toastr.info("Step 2 : Enter Your Password");
   $('#password').focusout(function() {
       $('.passwordlabel').css({
           'top': '68%',

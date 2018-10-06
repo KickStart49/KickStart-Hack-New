@@ -136,7 +136,10 @@ Route::post('/teacher', [
     'uses' => 'Admincontroller@assi_add',
     'as'=>'assignment.add'
 ]);
-
+Route::get('/teacher/disqus', [
+    'uses' => 'Disquscontroller@add',
+    'as' => 'disqus'
+]);
 Route::post('/student/search', [
     'uses' => 'Admincontroller@stu_search',
     'as'=>'student.search'

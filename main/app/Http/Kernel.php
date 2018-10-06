@@ -65,10 +65,11 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'revalidate' => \App\Http\Middleware\RevalidateBackHistory::class,
-        'emailverify' => \App\Http\Middleware\verifyEmail::class,
+        
         
         'code' => \App\Http\Middleware\code::class,
         'codegenerate' => \App\Http\Middleware\codegenerator::class,
+        'emailverify' => \App\Http\Middleware\verifyEmail::class,
     ];
 
     /**
@@ -85,9 +86,11 @@ class Kernel extends HttpKernel
         \Illuminate\View\Middleware\ShareErrorsFromSession::class,
         \App\Http\Middleware\Authenticate::class,
         \Illuminate\Session\Middleware\AuthenticateSession::class,
+        
+        \App\Http\Middleware\verifyemail::class,
         \App\Http\Middleware\codegenerator::class,
         \App\Http\Middleware\code::class,
-         \App\Http\Middleware\verifyemail::class,
+         
         \Illuminate\Routing\Middleware\SubstituteBindings::class,
         \Illuminate\Auth\Middleware\Authorize::class,
 
