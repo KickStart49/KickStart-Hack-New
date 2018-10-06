@@ -380,7 +380,10 @@ hr {
 }
 
 @media only screen and (max-width: 320px) {
-	
+   div.bot
+	{
+		margin-top: 18%;
+	}	
 	.mainlogin{top:0;
 	left:0;
 	right: 0;
@@ -410,7 +413,7 @@ transform: translate(0%,0%);
 @media only screen and (max-width: 1920px) {
     div.bot
 	{
-		margin-top: 38%;
+		margin-top: 100%;
 	}
 	div.bottom
 	{
