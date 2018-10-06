@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Auth;
+
 use App\Teacher;
 use App\Student;
 use App\User;
@@ -8,7 +9,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
-
 class RegisterController extends Controller
 {
     /*
@@ -65,20 +65,33 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        if($data['category'] == "student"){
-         Student::create([
-            'student_id' => mt_rand(100000, 999999),
-        ]);   
-        }elseif($data['category'] == "teacher"){
-         Teacher::create([
-            'class_id' => mt_rand(100000, 999999),
-        ]);   
-        }
-        return User::create([
+
+
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'permission' => $data['category'],
+            'permission' => $data['category']
         ]);
+
+     $id= $user->id;
+
+        if($data['category'] == "student"){
+        
+            Student::create([
+                'user_id' => $id, 
+                'student_id' => mt_rand(100000, 999999)
+                
+            ]);   
+        }else{
+            if($data['category'] == "teacher"){
+        
+                Teacher::create([
+                    'user_id' => $id, 
+                    'class_id' => mt_rand(100000, 999999)
+                    
+                ]);   
+            }
+        }
     }
 }

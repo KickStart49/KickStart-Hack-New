@@ -43,6 +43,6 @@ class User extends Authenticatable
     }
     public function parent()
     {
-        return $this->hasMany('App\Parent');
+        return $this->hasMany('App\ParentClass');
     }
 }

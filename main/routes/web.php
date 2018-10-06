@@ -29,10 +29,10 @@ Route::prefix('login')->group(function () {
         'uses' => 'LoginAuthCheck@login',
         'as' => 'logindemo'
     ]);
-     // Route::post('/code/verification', [
-     // 'uses' => 'Admincontroller@verification',
-     // 'as'=>'code.verification'
-     //    ]);
+     Route::post('/code/verification', [
+     'uses' => 'Admincontroller@verification',
+     'as'=>'code.verification'
+        ]);
 
     Route::post('success', [
         'uses' => 'LoginAuthCheck@loginsuccess',
@@ -106,15 +106,12 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-// Route::get('/code', [
-//     'uses' => 'Admincontroller@code',
-//     'as'=>'code'
-// ]);
+Route::get('/code', [
+    'uses' => 'Admincontroller@code',
+    'as'=>'code'
+]);
 
-// Route::get('/code/verification/{id}', [
-//     'uses' => 'Admincontroller@student',
-//     'as'=>'code.verification'
-// ]);
+
 
 // Route::get('user/manager/{id}', [
 //     'uses' => 'Usercontroller@manager',
