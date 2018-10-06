@@ -8,6 +8,7 @@ use App\Student;
 use App\User;
 use App\Teacher;
 use DB;
+use App\Assignment;
 
 class Admincontroller extends Controller
 {
@@ -63,13 +64,12 @@ class Admincontroller extends Controller
     // }
     public function assi_add(Request $request)
     {
-        $post=::create([
-            'title'=>$request->title,
-            'content'=>$request->content,
-            'featured'=>'uploads/post/'. $featured_new_name,
-            'category_id'=>$request->category_id,
-            'slug'=>str_slug($request->title)
-            ]);
         dd($request->all());
+        $assignment=Assignment::create([
+            'title'=>$request->title,
+            'about'=>$request->about,
+            'date'=>$request->lastdate,
+            ]);
+        
     }
 }

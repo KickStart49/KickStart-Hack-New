@@ -24,7 +24,8 @@
                     
                     <h3>Assignments</h3>
                     <div>
-                      <form href="{{route('assignment.add')}}" method="post">
+                      <form method="post" href="{{route('assignment.add')}}">
+                        {{csrf_field()}}
                       <input type="text" name="Assignment title" placeholder="Assignment title"><br><br> 
                     <input type="date" name="duedate">
 
@@ -33,7 +34,7 @@
                       <input type="text" name="Assignment Discription" placeholder="Assignment Description">
                       <input type="text" name="Select classes" placeholder="Select Classes"> 
                       <input type="file" name="attach a file">
-                      <button>Submit</button>
+                      <input type="submit" class="btn" value="Submit">
 
                     </form>
                   </div>

@@ -18,7 +18,7 @@ class CreateAssignmentsTable extends Migration
             $table->string('title');
             $table->string('about');
             $table->date('lastdate');
-            $table->string('avatar');
+            $table->string('avatar')->nullable();
             $table->timestamps();
         });
     }

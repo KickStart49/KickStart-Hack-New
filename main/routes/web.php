@@ -29,10 +29,10 @@ Route::prefix('login')->group(function () {
         'uses' => 'LoginAuthCheck@login',
         'as' => 'logindemo'
     ]);
-     Route::post('/code/verification', [
-     'uses' => 'Admincontroller@verification',
-     'as'=>'code.verification'
-        ]);
+     // Route::post('/code/verification', [
+     // 'uses' => 'Admincontroller@verification',
+     // 'as'=>'code.verification'
+     //    ]);
 
     Route::post('success', [
         'uses' => 'LoginAuthCheck@loginsuccess',
@@ -135,9 +135,10 @@ Route::get('/teacher', [
         'uses' => 'Admincontroller@teacher',
         'as'=>'teacher'
     ]); 
-    Route::post('/assignment/add', [
-        'uses' => 'Admincontroller@assi_add',
-        'as'=>'assignment.add'
-    ]);
+    
+Route::post('/assignment/add', [
+    'uses' => 'Admincontroller@assi_add',
+    'as'=>'assignment.add'
+]);
 
 

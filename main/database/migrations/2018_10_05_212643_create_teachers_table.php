@@ -16,7 +16,6 @@ class CreateTeachersTable extends Migration
         Schema::create('teachers', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('class_id')->unique();
-            $table->array('stu_arr')->nullable();
             $table->timestamps();
         });
     }
