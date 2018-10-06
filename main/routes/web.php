@@ -131,12 +131,11 @@ Auth::routes(['verify' => true]);
 // Route::get('/signup', function () {
 //     return view('auth.register.register');
 // });
-Route::get('/teacher', [
-        'uses' => 'Admincontroller@teacher',
-        'as'=>'teacher'
-    ]); 
+Route::get('/teacher', function(){
+    return view('admin.user.teacher');
+}); 
     
-Route::post('/assignment/add', [
+Route::post('/teacher', [
     'uses' => 'Admincontroller@assi_add',
     'as'=>'assignment.add'
 ]);
