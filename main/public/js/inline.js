@@ -34,4 +34,7 @@ function openCity1(evt, cityName) {
 }
 
 // Get the element with id="defaultOpen" and click on it
+$(document).ready(function(){
+    $("#defaultOpen").show();
+});
 document.getElementById("defaultOpen").click();

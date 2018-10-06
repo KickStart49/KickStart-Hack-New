@@ -7,6 +7,7 @@ use Closure;
 use App\User;
 use App\Student;
 use App\Teacher;
+use App\ParentClass;
 use DB;
 
 class codegenerator
@@ -35,7 +36,8 @@ class codegenerator
                 $UpdateDetails->code_status = 1;
                 $UpdateDetails->save();
 
-            }elseif($user->permission == "teacher"){
+            }
+            if($user->permission == "teacher"){
             
                 $quote = new Teacher;
                 $quote->fill($request->all());
@@ -43,6 +45,17 @@ class codegenerator
                 $quote->class_id = mt_rand(100000, 999999); 
                 $quote->save();  
                  $UpdateDetails = User::where('id', '=',  $currentuserId)->first();
+                $UpdateDetails->code_status = 1;
+                $UpdateDetails->save();
+                
+            }
+            if($user->permission == "parent"){
+            
+                $quote = new ParentClass;
+                $quote->fill($request->all());
+                $quote->user_id = Auth::id();
+                $quote->save();  
+                $UpdateDetails = User::where('id', '=',  $currentuserId)->first();
                 $UpdateDetails->code_status = 1;
                 $UpdateDetails->save();
                 

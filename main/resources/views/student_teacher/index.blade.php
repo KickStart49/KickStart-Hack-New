@@ -25,6 +25,7 @@
 	<div class="col-12">please enter your child code.
 		<input type="hidden" name="category" value="parent">
 		<input type="text" name="childcode">
+		<input type="submit" value="Submit">
 	</div>
 	</div>
 </form>

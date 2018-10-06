@@ -130,9 +130,20 @@ Auth::routes(['verify' => true]);
 // });
 Route::get('/teacher', function(){
     return view('admin.user.teacher');
-}); 
-    
-Route::post('/teacher', [
+})->middleware(['auth','emailverify','code','codegenerate'])
+->name('teacher'); 
+
+Route::get('/student', function(){
+    return view('admin.user.student');
+})->middleware(['auth','emailverify','code','codegenerate'])
+->name('student');    
+
+Route::get('/parent', function(){
+    return view('admin.user.parent');
+})->middleware(['auth','emailverify','code','codegenerate'])
+->name('parent'); 
+
+Route::post('/teacher1', [
     'uses' => 'Admincontroller@assi_add',
     'as'=>'assignment.add'
 ]);
@@ -145,4 +156,7 @@ Route::post('/student/search', [
     'as'=>'student.search'
 ]);
 
-
+Route::get('/admin', [
+    'uses' => 'Admincontroller@showadmin',
+    'as'=>'showadmin'
+]);

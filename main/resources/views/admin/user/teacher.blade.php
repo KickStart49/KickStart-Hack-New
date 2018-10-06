@@ -1,13 +1,13 @@
 @extends('layouts.adminlayout')
 @section('content')
-    <div style="margin-left: 20%;" class="row">
+    <div style="margin-left: 10%;" class="row">
 
-            <div class="col-lg-8">
+            <div class="col-lg-10">
               <div class="card">
                 
                   <section>
                   <div class="tab">
-                    <button class="tablinks" onclick="openCity(event, 'London')">Post</button>
+                    <button class="tablinks active" onclick="openCity(event, 'London')" id="defaultOpen">Post</button>
                     <button class="tablinks" onclick="openCity(event, 'Paris')">Work</button>
                     <button class="tablinks" onclick="openCity(event, 'Tokyo')">Members</button>
                   </div>

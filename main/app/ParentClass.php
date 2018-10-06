@@ -10,5 +10,8 @@ class ParentClass extends Model
     {
         return $this->hasMany('App\Student');
     }
+    protected $fillable = [
+        'class'
+    ];
    
 }
