@@ -8,6 +8,7 @@ use App\Student;
 use App\User;
 use App\Teacher;
 use DB;
+use App\Assignment;
 
 class Admincontroller extends Controller
 {
@@ -35,26 +36,26 @@ class Admincontroller extends Controller
         
         return view('student_teacher.index')->with('users',User::all());
     }
-    public function verification(Request $request)
-    {
-        if($request->category == "student")
-        {
+    // public function verification(Request $request)
+    // {
+    //     if($request->category == "student")
+    //     {
             
-            $currentuserid = Auth::id();
-            $users = User::all();
-            $user = User::find('id',$currentuserid)->first();
+    //         $currentuserid = Auth::id();
+    //         $users = User::all();
+    //         $user = User::find('id',$currentuserid)->first();
             
-            $user
+    //         $user
 
-            $t=Teacher::where('class_id',$request->classcode)->first();
+    //         $t=Teacher::where('class_id',$request->classcode)->first();
             
-            if($t){
-                $t->student()->attach($st);
-            }
+    //         if($t){
+    //             $t->student()->attach($st);
+    //         }
 
-            return redirect()->route('categories');
+    //         return redirect()->route('categories');
 
-            // $class_id=$request->classcode;
+    //         // $class_id=$request->classcode;
         
             // $teacher = DB::table('teachers')->where('class_id',$class_id)->first();
             
@@ -65,10 +66,18 @@ class Admincontroller extends Controller
             //     Teacher::insert();
                    
             // }
-        }
-    }
+       // }
+    //}
     public function assi_add(Request $request){
-        dd($request->all());
+
+          
+            $assignment=Assignment::create([
+        'title'=>$request->title,
+        'about'=>$request->about,
+        'lastdate'=>$request->lastdate,
+        'avatar'=>'uploads/assignment',
+        dd($request->all())
+    ]);
     }
    
 
