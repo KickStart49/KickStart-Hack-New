@@ -178,15 +178,24 @@
                             <tr>
                               <th>Name</th>
                               <th>Subject</th>
-                              <th>Age</th>
+                              <th>No. of students</th>
+                              <th>Classcode</th>
                               
                             </tr>
                           </thead>
                           <tbody>
                             <tr>
                               <td>Anna</td>
-                              <td>Pitt</td>
-                              <td>35</td>
+                              <td>Maths</td>
+                              <td>46</td>
+                              <td>675445</td>
+                              
+                            </tr>
+                            <tr>
+                              <td>Anil</td>
+                              <td>Science</td>
+                              <td>89</td>
+                              <td>788867</td>
                               
                             </tr>
                           </tbody>
