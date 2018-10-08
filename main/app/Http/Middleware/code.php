@@ -16,7 +16,6 @@ class code
      */
     public function handle($request, Closure $next)
     {
-        $response = $next($request);
 
         $currentuserId = Auth::id();
         $user = DB::table('users')->where('id',$currentuserId)->first();
@@ -30,22 +29,18 @@ class code
                     return redirect()->route('permission')->with('permission','student')->with('user',$user);   
                 
             }
-            else{
-                return $response;
-            }
+            
         }
         if ($user->permission == "parent") {
             
             $pt = DB::table('parent_classes')->where('user_id',$currentuserId)->first();
 
-            if($pt->class == 1){
+            if(!$pt->class){
             
-                return $response;
-                  
-            }else{
-                
                 return redirect()->route('permission')->with('permission','parent')->with('user',$user); 
+                  
             }
-        }    
+        }  
+        return $next($request);
     }
 }

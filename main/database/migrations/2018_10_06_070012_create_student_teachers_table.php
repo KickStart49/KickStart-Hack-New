@@ -17,8 +17,8 @@ class CreateStudentTeachersTable extends Migration
             $table->increments('id');
             $table->integer('teacher_id');
             $table->integer('student_id');
-            $table->string('subject');
-            $table->string('name');
+            $table->string('subject')->nullable();
+            $table->string('name')->nullable();
             $table->timestamps();
         });
     }

@@ -13,7 +13,9 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
+
+// .......................Login Routes .............
 
 Route::prefix('login')->group(function () {
     
@@ -70,7 +72,6 @@ Route::prefix('login')->group(function () {
  
 });
 Route::prefix('admin')->group(function () {
-
 
     Route::get('charts', [
         'uses' => 'Admincontroller@index',
@@ -130,7 +131,7 @@ Auth::routes(['verify' => true]);
 // });
 Route::get('/teacher', function(){
     return view('admin.user.teacher');
-})->middleware(['auth','emailverify','code','codegenerate'])
+})
 ->name('teacher'); 
 
 Route::get('/student', function(){
@@ -143,7 +144,7 @@ Route::get('/parent', function(){
 })->middleware(['auth','emailverify','code','codegenerate'])
 ->name('parent'); 
 
-Route::post('/teacher1', [
+Route::post('/teacher', [
     'uses' => 'Admincontroller@assi_add',
     'as'=>'assignment.add'
 ]);
@@ -156,10 +157,9 @@ Route::post('/student/search', [
     'as'=>'student.search'
 ]);
 
-<<<<<<< HEAD
+
 Route::get('/admin', [
     'uses' => 'Admincontroller@showadmin',
     'as'=>'showadmin'
 ]);
-=======
->>>>>>> f77f3b0f62b2abea99e393bdec2cc0736cf7ebbb
+

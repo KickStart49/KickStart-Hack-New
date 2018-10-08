@@ -55,6 +55,7 @@ class codegenerator
                 $quote->fill($request->all());
                 $quote->user_id = Auth::id();
                 $quote->save();  
+
                 $UpdateDetails = User::where('id', '=',  $currentuserId)->first();
                 $UpdateDetails->code_status = 1;
                 $UpdateDetails->save();

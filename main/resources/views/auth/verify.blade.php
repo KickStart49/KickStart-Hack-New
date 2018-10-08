@@ -13,8 +13,9 @@
                     <br><br>
                     {{ __('We have successfully generated your unique key for authentication,') }}, <a href="{{ route('verification.resend') }}">{{ __('Proceed Mail Verification') }}</a>
                     <br><br>
-                    <a href="{{ route('home') }}">{{ __('Homepage') }}</a>
-                    <br><br>    
+                       
+                    <a href="{{ route('welcome') }}">{{ __('Homepage') }}</a>
+                    <br><br> 
                 </div>
                
 @stop

@@ -18,7 +18,6 @@ class Admincontroller extends Controller
     {
     	return view('admin.charts');
     }
-<<<<<<< HEAD
     public function showadmin(Request $request)
     {
         $currentuserId = Auth::id();
@@ -39,9 +38,6 @@ class Admincontroller extends Controller
         } 
     }
         
-=======
-    
->>>>>>> f77f3b0f62b2abea99e393bdec2cc0736cf7ebbb
     public function formindex()
     {
     	return view('admin.forms');
@@ -73,16 +69,16 @@ class Admincontroller extends Controller
             $teacher=Teacher::where('class_id',$request->classcode)->first();
             if($teacher){
                 
-                $quote = new student_teacher;
-                $quote->fill($request->all());
-                $quote->teacher_id = $teacher->class_id;
-                $quote->student_id = $student->student_id; 
-                $quote->save();
+                $user = new student_teacher;
+                $user->fill($request->all());
+                $user->teacher_id = $teacher->class_id;
+                $user->student_id = $student->student_id; 
+                $user->save();
 
-                $quote1 = Student::find($id);
+                $user1 = Student::find($id);
                 
-                $quote1->class = 1;
-                $quote1->save();  
+                $user1->class = 1;
+                $user1->save();  
             }
 
             return redirect()->route('showadmin');
@@ -95,10 +91,10 @@ class Admincontroller extends Controller
             
             if($student){
                 
-                $quote = new ParentClass;
-                $quote->fill($request->all());
-                $quote->class=1;
-                $quote->save();  
+                $user = ParentClass::where('user_id', '=',  $currentuserId)->first();
+                $user->fill($request->all());
+                $user->class=1;
+                $user->save();  
             }
 
             return redirect()->route('showadmin');
@@ -113,17 +109,26 @@ class Admincontroller extends Controller
         // ]);
        
         
-        $assignment = new Assignment();
+        
+        $assignment = new Assignment;
         // $assignment->fill($request->all());
         $assignment->title = $request -> Assignment_title;
         $assignment->lastdate = $request->duedate;
         $assignment->about=$request->about;
-        $featured=$request->featured;
+        $featured=$request->attach_a_file;
         $featured_new_name=time().$featured->getClientOriginalName();
         $featured->move('uploads/assignment',$featured_new_name);
         $assignment->featured='uploads/assignment/'. $featured_new_name;
         $assignment->save();
+
          
+        return redirect()->back();
+        if($assignment)
+        {
+            
+        }
+
+
     }
     // public function stu_search(Request $request)
     // {

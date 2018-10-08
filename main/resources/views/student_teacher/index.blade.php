@@ -34,7 +34,7 @@
 @endif 
 
 @endif
-    <div style="text-align:center;"><a  href="{{ route('home') }}">{{ __('Homepage') }}</a></div>
+    <div style="text-align:center;"><a  href="{{ route('welcome') }}">{{ __('Homepage') }}</a></div>
     
 @stop
 @section('script')

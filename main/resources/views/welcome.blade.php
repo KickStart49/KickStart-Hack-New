@@ -109,7 +109,7 @@
           </div>
           <div class="col-lg-8 mx-auto">
             <p class="text-faded mb-5">Millions of learners around the world use Kickstart to find the resources they need and connect with educators.</p>
-            <a class="btn btn-primary btn-xl js-scroll-trigger" href="{{route('register')}}" style="margin: 3%">I am Student </a>
+            <a class="btn btn-primary btn-xl js-scroll-trigger" href="{{ route('register') }}" style="margin: 3%">I am Student </a>
             <a class="btn btn-primary btn-xl js-scroll-trigger" href="{{route('register')}}" style="margin: 3%">I am Teacher</a>
             <a class="btn btn-primary btn-xl js-scroll-trigger" href="{{route('register')}}" style="margin: 3%">I am Parent</a>
           </div>
@@ -188,7 +188,7 @@
                               <td>Anna</td>
                               <td>Maths</td>
                               <td>46</td>
-                              <td>675445</td>
+                              <td>798294</td>
                               
                             </tr>
                             <tr>
