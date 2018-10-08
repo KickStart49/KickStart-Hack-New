@@ -14,10 +14,7 @@ use App\Assignment;
 
 class Admincontroller extends Controller
 {
-    public function index()
-    {
-    	return view('admin.charts');
-    }
+
     public function showadmin(Request $request)
     {
         $currentuserId = Auth::id();
@@ -38,21 +35,6 @@ class Admincontroller extends Controller
         } 
     }
         
-    public function formindex()
-    {
-    	return view('admin.forms');
-    }
- //    public function createuser()
- //    {
- //    	return view('admin.user.create');
-	// }
- //    public function student($id)
- //    {
- //        $user=User::find($id);
- //        $user->permission="student";
- //        $user->save();
- //        return redirect()->back();
- //    }
     public function code()
     {
         
@@ -121,30 +103,8 @@ class Admincontroller extends Controller
         $assignment->featured='uploads/assignment/'. $featured_new_name;
         $assignment->save();
 
-         
         return redirect()->back();
-        if($assignment)
-        {
-            
-        }
-
 
     }
-    // public function stu_search(Request $request)
-    // {
-    //     $re = $request->searchmembers;
-        
-    
-    // if ($re){
-
-        
-
-    //     $search= student_teacher::all();
-           
-    //     $results = DB::table('users')->where('name','=',$re)->first();
-    //     dd($results->all());
-    // }
-    // }
    
-
 }

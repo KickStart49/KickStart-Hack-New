@@ -1,29 +1,41 @@
-Prahar)
+# Prahar
 
-Login Backend
-Redirect URL Functionality
-Prevent user to go back to Admin Panel after logout.
-Activity Notification
-Password Reset Notification
+-> Login Backend
+-> Redirect URL Functionality
+-> Revalidate Back History Functionality.
+-> Activity Notification
+-> Password Reset Notification
+-> Registeration Backend
+-> Added 4 filters
+   1) Authentication
+   2) Dynamic default code generation for student & teacher.
+   3) Code validation for student and parent.
+	[student have to give the class code to join particular class]
+	[parent have to give their child code as well as his/her class code for verification]
+   4) Mail Verification
+-> Added Disque Api
+-> Helped in frontend/api
 
-Shivani)
+# Dhruv
 
-Login Frontend
-Create User Backend
-Manage User Backend
-Pagination Functionality
-Like & count Functionality
+-> Registeration Frontend
+-> Student,Teacher,Parent Admin Panel Frontend
+-> Login and Home page Frontend
 
-Dhruv)
+# Hrishikesh
 
-Improvement in Login Frontend
-Registeration Frontend[Running]
-Admin Panel Frontend[Running]
+-> Home page Frontend
+-> Added Datatables Api
+-> Admin Panel Frontend
 
-Meshwa)
+# Shivani
 
-Registeration JS[Running]
+-> Login Frontend
+-> Teacher Panel Backend
+-> Frontend Integration in Backend and handled layouts and views
 
-Hrishikesh)
+# Meshwa
 
-User Profile Frontend[Running]
+-> Added Google Translator Api
+-> Student grade evaultion frontend
+-> word api
